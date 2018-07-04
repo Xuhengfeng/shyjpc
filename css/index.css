@@ -134,20 +134,26 @@ header .location{
 /* 二手好房 */
 .section{
     padding-top: 45px;
-    height: 440px;
+    height: 490px;
+    overflow: hidden;
 }
 .section h1{
     font-size: 29px;
     color: #000000;
     height: 50px;
+    line-height: 50px;
     box-sizing: border-box;
     position: relative;
+    margin-bottom: 45px;
 }
-.section h1 span{
-    margin-left: 20px;
+.section h1 span:nth-of-type(1){
+    margin: 0 20px 0 10px;
+    font-weight: bold;
+}
+.section h1 span:nth-of-type(2){
     color: #727271;
 }
-.section a{
+.section h1 a{
     position: absolute;
     top: 0;
     right: 10px;;
@@ -160,9 +166,14 @@ header .location{
 .section ul li{
     float: left;
     width: 275px;
+    height: 305px;
     margin-right: 20px;
     box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
+    overflow: hidden;
+}
+.section ul li a{
+    color: #000000;
 }
 .section ul li:last-child{
     margin-right: 0;
@@ -173,14 +184,15 @@ header .location{
 .section ul li .img{
     width: 275px;
     height: 215px;
+    background: #f5f5f5;
     overflow: hidden;
     cursor: pointer;
 }
 .section ul li .img img{
     width: 100%;
     height: 100%;
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
 }
 .section ul li .img:hover img{
     transform:  scale(1.2);
@@ -192,7 +204,10 @@ header .location{
     font-weight: bold;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.description .tags{
     overflow: hidden;
 }
 .description .tags span{
@@ -202,4 +217,166 @@ header .location{
 /* 小区 */
 .xiaoqu{
     background: #f5f5f5;
+}
+.xiaoqu ul li{
+    float: left;
+    width: 358px;
+    margin-right: 45px;
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+.xiaoqu ul li .img{
+    width: 100%;
+}
+
+/* 新盘 */
+.newdish{
+    background: #f5f5f5;
+}
+.newdish ul li{
+    float: left;
+    width: 358px;
+    margin-right: 45px;
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+.newdish ul li .img{
+    width: 100%;
+}
+/* 行业资讯 */
+.infotrend{
+    background: #f5f5f5;
+}
+.infotrend ul li{
+    float: left;
+    width: 358px;
+    margin-right: 45px;
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+.infotrend ul li .img{
+    width: 100%;
+}
+
+/* app 应用下载 */
+.appPopularize{
+    width: 100%;
+	height: 485px;
+	background-color: #F5F5F5;
+	background-image: url("../imgs/APP.png");
+	background-repeat: no-repeat;
+	background-position: center 0;
+	background-size: 1920px 485px;
+	padding-top: 40px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.appPopularize h1{
+    font-size: 60px;
+    color: #000000;
+}
+.appPopularize h4{
+    font-size: 29px;
+    color: #000000;
+    font-family: "microsoft yahei light";
+    margin-top: 5px;
+}
+.appPopularize p{
+    margin-top: 5px;
+    font-size: 15px;
+    color: #595757;
+}
+.appPopularize .button-group{
+    margin: 50px 10px 0 0;
+}
+.appPopularize button{
+    display: block;
+    border: none;
+    margin-bottom: 10px;
+}
+.appPopularize .qrcode{
+    margin-top: 23px;
+}
+
+/* 脚部 */
+footer{
+    overflow: hidden;
+    height: 430px;
+    width: 100%;
+	background-color: #000000;
+	background-image: url("../imgs/ftbg.png");
+	background-repeat: no-repeat;
+	background-position: center 0;
+	padding-top: 30px;
+    box-sizing: border-box;
+}
+footer .footer-hd{
+    position: relative;
+}
+footer ul{
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    height: 30px;
+    width: 600px;
+    line-height: 30px;
+}
+footer ul li{
+    float: left;
+    color: #ffffff;
+    font-size: 20px;
+    white-space: nowrap;
+}
+footer ul li a{
+    font-size: 16px;
+    margin: 0 10px;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+footer ul li a:hover{
+    color: #fe0000;
+}
+footer .footer-bd{
+    overflow: hidden;
+    height: 150px;
+    margin: 80px 0 50px 0; 
+}
+.footer-bd .logo{
+    margin-right: 100px;
+}
+.footer-bd .logo img{
+    width: 293px;
+    height: 91px;
+}
+.footer-bd .desc{
+    color: #ffffff;
+}
+.footer-bd .desc img{
+    margin-left: -36px;
+    margin-right: 5px;
+}
+.footer-bd .desc div{
+    font-size: 20px;
+}
+.footer-bd .desc .telphone{
+    font-size: 45px;
+}
+.footer-bd .app1{
+    margin-left: 80px;
+}
+.footer-bd .app2{
+    margin-left: 40px;
+}
+.footer-bd .app1 p,
+.footer-bd .app2 p{
+    color: #ffffff;
+}
+.copyright p{
+    text-align: center;
+    font-size: 18px;
+    color: #ffffff;
+    white-space: nowrap;
+    margin-bottom: 10px;
 }
