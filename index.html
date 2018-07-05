@@ -6,7 +6,8 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>世华地产-官网</title>
+    <title>世华易居-官网</title>
+    <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
@@ -22,25 +23,25 @@
         <div class="ocontainer">
             <div class="logo fl">
                 <img class="fl" src="imgs/logo1.png" alt="世华地产Logo">
-                <div class="fl toggle"><i class="iconfont xhf-icon-location location"></i>北海</div>
+                <div id="toggleCity" class="fl toggle"><i class="iconfont xhf-icon-location location"></i>北海</div>
             </div>
-            <nav class="fl">
+            <nav id="menu" class="fl">
                 <ul>
-                    <li>首页</li>
-                    <li>二手房</li>
-                    <li>新房</li>
-                    <li>租房</li>
-                    <li>业主委托
+                    <li><a href="#">首页</a></li>
+                    <li><a href="pages/twohouse.html">二手房</a></li>
+                    <li><a href="#">新房</a></li>
+                    <li><a href="#">租房</a></li>
+                    <li><a href="#">业主委托</a>
                         <ol class="yezhu">
                             <li><a href="#">我要租房</a></li>
                             <li><a href="#">我要出售</a></li>
                         </ol>
                     </li>
-                    <li>找经纪人</li>
-                    <li>找门店</li>
-                    <li>海外置业</li>
-                    <li>旅居投资</li>
-                    <li>更多
+                    <li><a href="#">找经纪人</a></li>
+                    <li><a href="#">找门店</a></li>
+                    <li><a href="#">海外置业</a></li>
+                    <li><a href="#">旅居投资</a></li>
+                    <li><a href="#">更多</a>
                         <ol class="more">
                             <li><a href="#">小区找房</a></li>
                             <li><a href="#">代办业务</a></li>
@@ -55,7 +56,7 @@
                     </li>
                 </ul>
             </nav>
-            <div class="user-login">
+            <div id="user" class="user-login">
                 <div class="info">
                     <i class="iconfont xhf-icon-yonghu"></i>
                     <span class="user-login-btn">登录</span>
@@ -66,7 +67,7 @@
                 
             </div>
             <div class="search">
-                <ul>
+                <ul id="selectQuery">
                     <li>二手房</li>
                     <li>租房</li>
                     <li>小区</li>
@@ -94,7 +95,7 @@
                         </div>
                     </div>
                     <div class="modal-bd">
-                        <div class="close"></div>
+                        <div id="closeDialog" class="close"></div>
                         <ul>
                             <li>
                                 <ol>热门</ol>
@@ -511,7 +512,7 @@
     </footer>
 
     <!-- 登录/注册 -->
-    <div class="loginContent">
+    <div id="loginContentBox" class="loginContent">
         <div class="shadow">
             <!-- 登录 -->
             <div class="loginBox" style="display: none;">
@@ -583,6 +584,7 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <!-- 自定义js -->
     <script src="js/index.js"></script>
+    <script src="js/login.js"></script>
 </body>
 </html>
 

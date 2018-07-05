@@ -38,13 +38,15 @@ header nav{
 header nav ul>li{
     position: relative;
     float: left;
-    color: #ffffff;
     padding:0 9px;
     font-size: 18px;
     /* height: 40px; */
     cursor: pointer;
 }
-header nav ul>li:hover{
+header nav ul>li a{
+    color: #ffffff;
+}
+header nav ul>li:hover>a{
     color: #fe0000;
 }
 header nav ol{
@@ -65,7 +67,7 @@ header nav ol>li>a{
     color: #000000;
     font-size: 14px;
 }
-header nav ol>li:hover a{
+header nav ol>li:hover>a{
     color: #fe0000;
 }
 header .location{
@@ -105,6 +107,7 @@ header .location{
     font-size: 14px;
 }
 
+/* 搜索框 */
 .search{
     position: absolute;
     top: 240px;
