@@ -1,0 +1,146 @@
+@charset "utf-8";
+/* 登录的全局样式 */
+.loginContent .shadow>div{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #ffffff;
+    width: 380px;
+    height: auto;
+    padding: 30px;
+    box-sizing: border-box;
+    min-height: 355px;
+}
+.loginContent h1{
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.loginContent ul li{
+    margin-bottom: 10px;
+}
+.loginContent input{
+    width: 100%;
+    height: 50px;
+    text-indent: 10px;
+    line-height: 50px;
+    border: 1px solid #999999;
+    box-sizing: border-box;
+}
+
+.loginContent input[type="submit"]{
+    border: none;
+    background: #ef0000;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+.loginContent input:focus{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+
+/* 忘记 */
+.loginContent .forget,
+.loginContent .phoneLogin,
+.loginContent .pwdLogin{
+    overflow: hidden;
+}
+.loginContent .forget span,
+.loginContent .phoneLogin span,
+.loginContent .pwdLogin span{
+    cursor: pointer;
+}
+
+/* 没有帐号 */
+.loginContent .without{
+    text-align: center;
+}
+.loginContent .without .register{
+    color: #ef0000;
+    cursor: pointer;
+}
+
+ /* 关闭 */
+.loginBox,
+.register,
+.phoneBox,
+.resetPwd{
+    position: relative;
+}
+.loginContent .close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background: url("../imgs/close.png") no-repeat center center;
+    background-size: 50%;
+    cursor: pointer;
+}
+
+/* 发送验证码 */
+.loginContent .sendCode{
+    position: relative;
+    width: 200px;
+}
+.sendCode button{
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    right: -120px;
+    top: 0;
+    border: none;
+    background: #ef0000;
+    color: #ffffff;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+
+/* checkbox 同意 */
+.agreet{
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.agreet *{
+    float: left;
+    height: 20px;
+    line-height: 20px;
+}
+#myAgreet{
+    width: 20px;
+    height: 20px;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+}
+#myAgreet:checked+label span:first-child{
+    background: #ef0000 url("../imgs/gou.png") no-repeat center center;
+    border: 1px solid #ef0000;
+}
+.agreet span:last-child{
+    cursor: pointer;
+}
+.agreet label span:first-child{
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    border: 1px solid #dddddd;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* 世华注册服务协议 */
+.serviceAgreetment{
+    color: #ef0000;
+    cursor: pointer;
+}

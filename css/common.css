@@ -2,7 +2,7 @@
  * @Author: 徐横峰 
  * @Date: 2018-07-04 11:32:09 
  * @Last Modified by: 564297479@qq.com
- * @Last Modified time: 2018-07-04 11:46:47
+ * @Last Modified time: 2018-07-05 17:11:25
  */
 @charset "utf-8";
 :root{
@@ -19,9 +19,35 @@ body, html{
     font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif, 'Droid Sans Fallback';
     background: var(--bgColor);
 }
-.container{
+/* 居中盒子 ocontainer 避免命名冲突*/
+.ocontainer{
     width: 1170px;
     min-width: 1170px;
     margin: 0 auto;
 }
 
+/* 重置bootstrap样式 */
+p{
+    margin-bottom: 0;
+}
+a{
+    text-decoration: none!important;
+}
+
+/* 切换类 */
+.showContent{
+    display: block!important;
+}
+.hideContent{
+    display: none!important;
+}
+
+/* 阴影层 */
+.shadow{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 999;
+}
