@@ -1,0 +1,39 @@
+/*
+ * @Author: 徐横峰 
+ * @Date: 2018-07-06 14:50:16 
+ * @Last Modified by: 564297479@qq.com
+ * @Last Modified time: 2018-07-06 15:47:06
+ */
+/* 筛选标签样式表 */
+@charset "utf-8";
+.filter ul{
+    overflow: hidden;
+    background-color: #fbfbfb;
+    -webkit-box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.2);
+    position: relative;
+    border-bottom: 1px solid #cacaca;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 24px 0 0 35px;
+}
+.filter ul>li{
+    overflow: hidden;
+    margin-bottom: 28px;
+}
+.filter ul>li>ol{
+    float: left;
+}
+.filter ul>li>ol:nth-of-type(1){
+    width: 110px;
+    font-size: 12px;
+    font-weight: 700; 
+}
+.filter ol>li{
+    float: left;
+    margin-right: 22px;
+}
+.filter a{
+    color: #000000;
+}
+

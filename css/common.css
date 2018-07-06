@@ -2,7 +2,7 @@
  * @Author: 徐横峰 
  * @Date: 2018-07-04 11:32:09 
  * @Last Modified by: 564297479@qq.com
- * @Last Modified time: 2018-07-05 17:11:25
+ * @Last Modified time: 2018-07-06 15:59:53
  */
 @charset "utf-8";
 
@@ -37,7 +37,10 @@ body, html{
     margin: 0 auto;
 }
 
-
+/* 导航菜单 活动的 */
+.oactive{
+    color: var(--fontColor)!important;
+}
 
 /* ----------------------------------------------- */
 /* 重置bootstrap样式 */

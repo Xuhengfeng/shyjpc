@@ -1,0 +1,59 @@
+/*
+ * @Author: 徐横峰 
+ * @Date: 2018-07-06 14:56:48 
+ * @Last Modified by: 564297479@qq.com
+ * @Last Modified time: 2018-07-06 15:49:11
+ */
+/* 租房样式表 */
+@charset "utf-8";
+
+/* 检索结果提示 */
+.resultTips{
+    font-weight: bold;
+    font-size: 22px;
+    color: #394043;
+}
+.resultTips .count{
+    color: #fe0000;
+}
+.resultTips{
+    margin: 50px 0 20px;
+}
+
+/* 右边 侧边栏 */
+aside{
+    width: 180px;
+}
+aside .handhelp{
+    border-bottom: var(--border1px);
+}
+aside .handhelp h2{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+aside .handhelp h2 a{
+    color:  rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    font-size: 12px;
+}
+aside ul li{
+    margin-bottom: 10px;
+}
+aside li h3{
+    color: #000000;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+aside li p{
+    color: rgba(0, 0, 0, 0.5);
+}
+aside .download h2{
+    font-size: 16px;
+    margin: 30px 0 20px;
+}
+
+.owrapper{
+    width: 930px;
+    position: relative;
+}
+

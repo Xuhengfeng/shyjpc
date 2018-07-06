@@ -1,0 +1,115 @@
+/*
+ * @Author: 徐横峰 
+ * @Date: 2018-07-06 14:45:18 
+ * @Last Modified by: 564297479@qq.com
+ * @Last Modified time: 2018-07-06 15:40:28
+ */
+/* 房源列表项样式表 */
+/* 列表项的主要 左边内容*/
+@charset "utf-8";
+.main>div{
+    overflow: hidden;
+}
+.item{
+    margin-right: 240px;
+    width: 930px;
+}
+.item li{
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+    border-top: var(--border1px);
+}
+.item .houseImg{
+    overflow: hidden;
+    float: left;
+    width: 232px;
+    height: 175px;
+    background: #f5f5f5;
+}
+.item .houseImg img{
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.item .houseImg:hover img{
+    transform: scale(1.1);
+}
+
+/* 列表项的 右边内容 */
+.item .r-content{
+    margin-left: 260px;
+}
+.item .r-content h2,
+.item .r-content>div{
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+.item .r-content>div{
+    color: rgba(0, 0, 0, 0.7);
+}
+.item .r-content h2 a{
+    font-size: 20px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    color: #000;
+}
+.item .r-content img{
+    float: left;
+    margin-right: 10px;
+}
+.item .r-content .tags{
+    overflow: hidden;
+}
+.item .r-content .tags span{
+    float: left;
+    width: 70px;
+    height: 30px;
+    margin-right: 10px;
+    line-height: 30px;
+    text-align: center;
+}
+.moreDesc{
+    position: absolute;
+    top: 20px;
+    right: 0;
+}
+.moreDesc div{
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.moreDesc .add{
+    display: inline-block;
+    width: 60px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border: var(--border1px);
+    color: rgba(0, 0, 0, 0.5);
+    margin-left: 10px;
+    font-size: 10px;
+    visibility: hidden;
+}
+.moreDesc>div{
+    text-align: right;
+}
+
+/* tags 颜色 */
+.item .r-content .tags span:nth-of-type(1){
+    background: var(--spanbgColor1);
+    color: var(--spanColor1);
+}
+.item .r-content .tags span:nth-of-type(2){
+    background: var(--spanbgColor2);
+    color: var(--spanColor2);
+}
+.item .r-content .tags span:nth-of-type(3){
+    background: var(--spanbgColor3);
+    color: var(--spanColor3);
+}
+.item li:hover .moreDesc .add{
+    visibility: visible;
+}
