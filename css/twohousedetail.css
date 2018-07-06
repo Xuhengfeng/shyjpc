@@ -99,16 +99,16 @@ aside{
 /* 房源位置 */
 .houseLocation{
     overflow: hidden;
-    position: relative;
 }
-.houseLocation .position{
-    position: absolute;
-    left: 1px;
-    top: 111px;
+.houseLocation .border1px{
+    box-sizing: border-box;
+    border: var(--border1px);
+}
+.houseLocation .queryword{
+    overflow: hidden;
     width: 100%;
-    z-index: 1000;
 }
-.houseLocation .position li{
+.houseLocation .queryword li{
     float: left;
     width: 118.4px;
     height: 70px;
@@ -122,6 +122,6 @@ aside{
     margin: 60px 0 26px;
 }
 #oMap{
-    height: 392px;
-    border: 1px solid red;
+    height: 322px;
+    width: 100%;
 }
