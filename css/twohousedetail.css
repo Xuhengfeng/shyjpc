@@ -1,7 +1,127 @@
 /*
  * @Author: 徐横峰 
  * @Date: 2018-07-06 16:36:50 
- * @Last Modified by:   564297479@qq.com 
- * @Last Modified time: 2018-07-06 16:36:50 
+ * @Last Modified by: 564297479@qq.com
+ * @Last Modified time: 2018-07-06 18:16:09
  */
+ /* 二手房详情样式表 */
 @charset "utf-8";
+.main{
+    overflow: hidden;
+}
+.l-container{
+    width: 714px;
+}
+aside{
+    width: 380px;
+    height: 800px;
+    background: #f5f5f5;
+}
+
+/* 主体内容 */
+.main .title h1{
+    font-size: 24px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.85);
+}
+.main .title h4{
+    font-size: 14px;
+    margin: 12px 0 24px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* 图片交互区域 */
+.oslide{
+    width: 100%;
+    height: 490px;
+}
+.oslide .view{
+    position: relative;
+    height: 400px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.oslide .view .oswiper-container{
+    height: 100%;
+}
+.oslide .view img{
+    width: 100%;
+    height: 100%;
+}
+.oslide .preview{
+    position: relative;
+    height: 80px;
+    padding: 0 40px;
+}
+.oslide .preview .oswiper-wrapper>div{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+.oslide .oswiper-wrapper img{
+    width: 100%;
+    height: 100%;
+}
+.arrow-left,
+.arrow-right{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: block;
+    width: 30px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    color: #fe0000;
+    font-size: 30px;
+    /* background: #000000; */
+}
+.arrow-left{
+    left: 0;
+}
+.arrow-right{
+    right: 0;
+}
+.preview .active-nav::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #fe0000;
+    box-sizing: border-box;
+}
+
+
+/* 房源位置 */
+.houseLocation{
+    overflow: hidden;
+    position: relative;
+}
+.houseLocation .position{
+    position: absolute;
+    left: 1px;
+    top: 111px;
+    width: 100%;
+    z-index: 1000;
+}
+.houseLocation .position li{
+    float: left;
+    width: 118.4px;
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
+    background: #ffffff;
+    font-size: 20px;
+}
+.houseLocation h2{
+    font-size: 20px;
+    margin: 60px 0 26px;
+}
+#oMap{
+    height: 392px;
+    border: 1px solid red;
+}

@@ -12,6 +12,7 @@ footer{
 }
 footer .footer-hd{
     position: relative;
+    height: 30px;
 }
 footer ul{
     overflow: hidden;
@@ -22,12 +23,14 @@ footer ul{
     height: 30px;
     width: 600px;
     line-height: 30px;
+    margin-bottom: 0;
 }
 footer ul li{
     float: left;
     color: #ffffff;
     font-size: 20px;
     white-space: nowrap;
+    box-sizing: border-box;
 }
 footer ul li a{
     font-size: 16px;

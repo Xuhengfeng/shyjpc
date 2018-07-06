@@ -2,7 +2,7 @@
  * @Author: 徐横峰 
  * @Date: 2018-07-04 11:32:09 
  * @Last Modified by: 564297479@qq.com
- * @Last Modified time: 2018-07-06 15:59:53
+ * @Last Modified time: 2018-07-06 17:11:01
  */
 @charset "utf-8";
 
@@ -22,6 +22,7 @@
     --spanColor2: rgba(239, 31, 31, 0.85);
     --spanColor3: #33be85;
     --border1px: 1px solid #ddd;
+    --placeholdbgColor: #f5f5f5; 
 }
 body, html{    
     width: 100%;
