@@ -37,6 +37,7 @@
     top: 70px;
     left: 0;
     position: absolute;
+    z-index: 1000;
 }
 #menu ol>li{
     width: 72px;
@@ -58,7 +59,7 @@
 .user-login{
     position: absolute;
     right: 0;
-    top: 20px;
+    top: 21px;
     color: #ffffff;
     font-size: 18px;
 }
@@ -87,6 +88,15 @@
     color: #000000;
     font-size: 14px;
 }
+/* 热线电话 */
+.hotline{
+    position: absolute;
+    right: 200px;
+    top: 21px;
+    color: #ffffff;
+    font-size: 18px;
+}
+
 
 /* 头部 */
 .header{
@@ -96,6 +106,41 @@
     padding: 50px 0;
     box-sizing: border-box;
     background: #F9F9F9;
+}
+.header .logo{
+    margin-right: 46px;
+}
+.header .search{
+    width: 514px;
+    height: 46px;
+    line-height: 46px;
+    background: #ffffff;
+}
+.header input[type="text"]{
+    float: left;
+    width: calc(100% - 105px);
+    height: 100%;
+    box-sizing: border-box;
+    text-indent: 10px;
+    border: 0;
+}
+.header input[type="submit"]{
+    float: left;
+    width: 100px;
+    height: 100%;
+    background: transparent;
+    border: 0;
+    box-sizing: border-box;
+    background: url("../imgs/search.png") no-repeat center center;
+    background-size: 20%;
+}
+.header .mapQuery{
+    margin: 10px 20px 0 0;
+    vertical-align: middle;
+}
+.header .mapQuery img{
+    margin-right: 20px;
+    vertical-align: middle;
 }
 
 /* 检索条件 */
@@ -112,7 +157,7 @@
 }
 .filter ul>li{
     overflow: hidden;
-    margin-bottom: 10px;
+    margin-bottom: 28px;
 }
 .filter ul>li>ol{
     float: left;
@@ -122,10 +167,56 @@
 }
 .filter ol>li{
     float: left;
-    margin-right: 20px;
+    margin-right: 22px;
+}
+.filter a{
+    color: #000000;
 }
 
-/* 主要内容 */
+/* 检索结果提示 */
+.resultTips{
+    font-weight: bold;
+    font-size: 22px;
+    color: #394043;
+}
+.resultTips .count{
+    color: #fe0000;
+}
+
+/* 右边 侧边栏 */
+aside{
+    width: 180px;
+    height: 300px;
+}
+aside .handhelp{
+    border-bottom: var(--border1px);
+}
+aside .handhelp h2{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+aside .handhelp h2 a{
+    color:  rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    font-size: 12px;
+}
+aside ul li{
+    margin-bottom: 10px;
+}
+aside li h3{
+    color: #000000;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+aside li p{
+    color: rgba(0, 0, 0, 0.5);
+}
+aside .download h2{
+    font-size: 16px;
+    margin: 30px 0 20px;
+}
+
+/* 左边  列表项的主要内容 */
 .main>div{
     overflow: hidden;
 }
@@ -137,16 +228,16 @@
     width: 930px;
 }
 .item li{
+    position: relative;
     overflow: hidden;
     padding: 20px 0;
-    border-top: 1px solid #ddd;
+    border-top: var(--border1px);
 }
 .item .houseImg{
     overflow: hidden;
     float: left;
     width: 232px;
     height: 175px;
-    margin-right: 20px;
     background: #f5f5f5;
 }
 .item .houseImg img{
@@ -154,21 +245,91 @@
     width: 100%;
     height: 100%;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 .item .houseImg:hover img{
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
-.item .r-content h2{
+
+/* 列表项的 右边内容 */
+.item .r-content{
+    margin-left: 260px;
+}
+.item .r-content h2,
+.item .r-content>div{
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+.item .r-content>div{
+    color: rgba(0, 0, 0, 0.7);
+}
+.item .r-content h2 a{
     font-size: 20px;
     height: 30px;
     line-height: 30px;
     font-weight: bold;
+    color: #000;
+}
+.item .r-content img{
+    float: left;
+    margin-right: 10px;
+}
+.item .r-content .tags{
+    overflow: hidden;
+}
+.item .r-content .tags span{
+    float: left;
+    width: 70px;
+    height: 30px;
+    margin-right: 10px;
+    line-height: 30px;
+    text-align: center;
 }
 
+.owrapper{
+    width: 930px;
+    position: relative;
+}
 
-/* 侧边栏 */
-aside{
-    width: 180px;
-    height: 300px;
-    background: red;
+/* r-content 描述字段 */
+.moreDesc{
+    position: absolute;
+    top: 20px;
+    right: 0;
+}
+.moreDesc div{
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.moreDesc .add{
+    display: inline-block;
+    width: 60px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border: var(--border1px);
+    color: rgba(0, 0, 0, 0.5);
+    margin-left: 10px;
+    font-size: 10px;
+    visibility: hidden;
+}
+.moreDesc>div{
+    text-align: right;
+}
+
+/* tags 颜色 */
+.item .r-content .tags span:nth-of-type(1){
+    background: var(--spanbgColor1);
+    color: var(--spanColor1);
+}
+.item .r-content .tags span:nth-of-type(2){
+    background: var(--spanbgColor2);
+    color: var(--spanColor2);
+}
+.item .r-content .tags span:nth-of-type(3){
+    background: var(--spanbgColor3);
+    color: var(--spanColor3);
+}
+.item li:hover .moreDesc .add{
+    visibility: visible;
 }

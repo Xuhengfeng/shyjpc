@@ -5,20 +5,31 @@
  * @Last Modified time: 2018-07-05 17:11:25
  */
 @charset "utf-8";
+
+/* 全局变量 */
 :root{
-    --bgColor: #fff;
-    --theme: #000;
+    --theme: #ffffff;
     --text: #000;
+    --fontColor: #fe0000;
+    --bgColor: #fe0000;
     --textOne: rgba(255, 255, 255, 0.3);
     --textTwo: rgba(255, 255, 255, 0.5);
     --textThree: rgba(255, 255, 255, 0.8);
+    --spanbgColor1: #e5f2ff;
+    --spanbgColor2: #fde8e8;
+    --spanbgColor3: #e1f5ed;
+    --spanColor1: rgba(0, 85, 164, 0.85);
+    --spanColor2: rgba(239, 31, 31, 0.85);
+    --spanColor3: #33be85;
+    --border1px: 1px solid #ddd;
 }
 body, html{    
     width: 100%;
     min-width: 1170px;
     font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif, 'Droid Sans Fallback';
-    background: var(--bgColor);
+    background: var(--theme);
 }
+
 /* 居中盒子 ocontainer 避免命名冲突*/
 .ocontainer{
     width: 1170px;
@@ -26,6 +37,9 @@ body, html{
     margin: 0 auto;
 }
 
+
+
+/* ----------------------------------------------- */
 /* 重置bootstrap样式 */
 p{
     margin-bottom: 0;
@@ -33,7 +47,44 @@ p{
 a{
     text-decoration: none!important;
 }
+/* 面包屑 */
+.obreadcrumb{
+    width: 930px;
+    border-top: var(--border1px);
+}
+.obreadcrumb ol{
+    padding: .75rem 1rem .75rem 0;
+    background: transparent;
+}
+.obreadcrumb a{
+    color: #000000;
+}
 
+/* 分页器 */
+.opagination{
+    position: absolute;
+    right: -10px;
+    top: 10px;
+}
+.opagination .page-link{
+    border-radius: 0!important;
+    color: #000000;
+    font-size: 12px;
+}
+.opagination li{
+    margin-right: 10px;
+}
+.opagination .active .page-link{
+    outline: none!important;
+    background: var(--bgColor)!important;
+    border-color:  var(--bgColor)!important;
+}
+/* ------------------------------------------------- */
+
+
+
+/* --------------------------------- */
+/* js 相关类 */
 /* 切换类 */
 .showContent{
     display: block!important;
@@ -42,7 +93,7 @@ a{
     display: none!important;
 }
 
-/* 阴影层 */
+/* 阴影层类 */
 .shadow{
     position: fixed;
     top: 0;
@@ -51,3 +102,14 @@ a{
     background: rgba(0,0,0,0.6);
     z-index: 999;
 }
+
+/* 字体颜色类 */
+.fontColor{
+    color: var(--fontColor);
+}
+
+/* 背景颜色类 */
+.bgColor{
+    background: var(--bgColor);
+}
+/* --------------------------------- */

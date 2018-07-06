@@ -10,6 +10,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="../imgs/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/iconfont.css">
@@ -60,7 +61,10 @@
                     <span class="user-register-btn">立即注册</span>
                 </div>
                 <!-- 登录成功之后 append userInfo-->
-                
+            </div>
+            <!-- 热线电话 -->
+            <div class="hotline">
+                热线电话 <span>0779-3837272</span>
             </div>
         </div>
     </div>
@@ -70,12 +74,12 @@
         <div class="ocontainer">
             <div class="fl logo"><img src="../imgs/redLogo.png" alt="logo"></div>
             <div class="fl search">
-                <input type="text" placeholder="内容">
-                <input type="submit" value="提交">
+                <input type="text" placeholder="请输入区域丶商圈或小区名开始找房">
+                <input type="submit" value="">
             </div>
             <!-- 地图找房 -->
-            <div class="fl mapQuery">
-                
+            <div class="fr mapQuery">
+                <img src="../imgs/location.png" alt="地图找房">地图找房
             </div>
         </div>
     </div>
@@ -116,57 +120,141 @@
     <section class="main">
         <div class="ocontainer">
             <!-- 检索结果提示 -->
-            <h1 class="resultTips">共找到 17136 套北海二手房</h1>
+            <h1 class="resultTips">共找到 <span class="count">17136</span> 套北海二手房</h1>
             <!-- 侧边栏aside -->
             <aside class="fr">
-                发斯蒂芬
+                <!-- 购房指南 -->
+                <div class="handhelp">
+                    <h2>购房指南 <a href="" class="fr">更多</a></h2>
+                    <ul>
+                        <li>
+                            <a href="">
+                                <h3>北海购房指南?</h3>
+                                <p>2018-01-02</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h3>北海购房指南?</h3>
+                                <p>2018-01-02</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h3>北海购房指南?</h3>
+                                <p>2018-01-02</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 世华易居app下载 -->
+                <div class="download">
+                    <h2>下载世华易居app</h2>
+                    <img src="../imgs/shyjapp.png" alt="世华易居app">
+                </div>
             </aside>
             <!-- list  -->
             <div class="item">
                 <ul>
                     <li>
                         <div class="houseImg">
-                            <img src="../imgs/ershou.png" alt="">
+                            <a href=""><img src="../imgs/ershou.png" alt="房源图片"></a> 
                         </div>
                         <div class="r-content">
-                            <h2>银海区银滩侨建公寓3房121.18平米65万</h2>
-                            <div>2</div>
-                            <div>2</div>
+                            <h2><a href="#">银海区银滩侨建公寓3房121.18平米65万</a></h2>
+                            <div><img src="../imgs/houseIcon.png" alt="房源描述1"> 高德|1房1厅|51平|南</div>
+                            <div><img src="../imgs/locationIcon.png" alt="房源描述2"> 赠送面积大,满二,拎包入住</div>
+                            <div class="tags">
+                                <span>全程房</span>
+                                <span>全程房</span>
+                                <span>全程房</span>
+                            </div>
+                        </div>
+                        <div class="moreDesc">
+                            <div><span class="add">加入对比</span></div>                            
+                            <div class="fontColor">77万</div>                            
+                            <div>单价9965元/平米</div>                            
                         </div>
                     </li>
                     <li>
                         <div class="houseImg">
-                            <img src="../imgs/ershou.png" alt="">
+                            <a href=""><img src="../imgs/ershou.png" alt="房源图片"></a> 
                         </div>
                         <div class="r-content">
-                            <h2>银海区银滩侨建公寓3房121.18平米65万</h2>
-                            <div>2</div>
-                            <div>2</div>
+                            <h2><a href="#">银海区银滩侨建公寓3房121.18平米65万</a></h2>
+                            <div><img src="../imgs/houseIcon.png" alt="房源描述1"> 高德|1房1厅|51平|南</div>
+                            <div><img src="../imgs/locationIcon.png" alt="房源描述2"> 赠送面积大,满二,拎包入住</div>
+                            <div class="tags">
+                                <span>全程房</span>
+                                <span>全程房</span>
+                                <span>全程房</span>
+                            </div>
+                        </div>
+                        <div class="moreDesc">
+                            <div><span class="add">加入对比</span></div>                            
+                            <div class="fontColor">77万</div>                            
+                            <div>单价9965元/平米</div>                            
                         </div>
                     </li>
                     <li>
                         <div class="houseImg">
-                            <img src="../imgs/ershou.png" alt="">
+                            <a href=""><img src="../imgs/ershou.png" alt="房源图片"></a> 
                         </div>
                         <div class="r-content">
-                            <h2>银海区银滩侨建公寓3房121.18平米65万</h2>
-                            <div>2</div>
-                            <div>2</div>
+                            <h2><a href="#">银海区银滩侨建公寓3房121.18平米65万</a></h2>
+                            <div><img src="../imgs/houseIcon.png" alt="房源描述1"> 高德|1房1厅|51平|南</div>
+                            <div><img src="../imgs/locationIcon.png" alt="房源描述2"> 赠送面积大,满二,拎包入住</div>
+                            <div class="tags">
+                                <span>全程房</span>
+                                <span>全程房</span>
+                                <span>全程房</span>
+                            </div>
                         </div>
-                    </li>
-                    <li>
-                        <div class="houseImg">
-                            <img src="../imgs/ershou.png" alt="">
-                        </div>
-                        <div class="r-content">
-                            <h2>银海区银滩侨建公寓3房121.18平米65万</h2>
-                            <div>2</div>
-                            <div>2</div>
+                        <div class="moreDesc">
+                            <div><span class="add">加入对比</span></div>                            
+                            <div class="fontColor">77万</div>                            
+                            <div>单价9965元/平米</div>                            
                         </div>
                     </li>
                 </ul>
             </div>
             
+            <div class="owrapper">
+                <!-- 面包屑 -->
+                <div class="obreadcrumb">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">首页</a></li>
+                            <li class="breadcrumb-item"><a href="#">二手房</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">北海</li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <!-- 分页器 -->
+                <div class="opagination">
+                    <nav aria-label="...">
+                        <ul class="pagination">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">上一页</a>
+                            </li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">3</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">下一页</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -274,6 +362,7 @@
         </div>
     </div>
     <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
     <!-- 自定义js -->
     <script src="../js/twohouse.js"></script>
     <script src="../js/login.js"></script>
