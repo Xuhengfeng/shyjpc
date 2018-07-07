@@ -1,8 +1,8 @@
 /*
  * @Author: 徐横峰 
- * @Date: 2018-07-05 23:27:08 
- * @Last Modified by:   mikey.zhaopeng 
- * @Last Modified time: 2018-07-05 23:27:08 
+ * @Date: 2018-07-08 01:32:58 
+ * @Last Modified by:   Xuhengfeng 
+ * @Last Modified time: 2018-07-08 01:32:58 
  */
 $(function(){
     //开启es5严格模式
@@ -36,11 +36,11 @@ $(function(){
                 break;
             case 1: 
                 $(".search-box input:eq(0)").attr("placeholder", '请输区名开始租房');
-                $('.search-box .up').animate({left: '110px'});
+                $('.search-box .up').animate({left: '123px'});
                 break;
             case 2: 
                 $(".search-box input:eq(0)").attr("placeholder", '请输入区域丶名开始找房');
-                $('.search-box .up').animate({left: '180px'});
+                $('.search-box .up').animate({left: '220px'});
                 break;
         }
     })

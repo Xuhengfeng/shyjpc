@@ -1,3 +1,9 @@
+/*
+ * @Author: 徐横峰 
+ * @Date: 2018-07-08 01:23:51 
+ * @Last Modified by:  Xuhengfeng 
+ * @Last Modified time: 2018-07-08 01:23:51 
+ */
 
 //登入请求
 function api_requestLogin(){

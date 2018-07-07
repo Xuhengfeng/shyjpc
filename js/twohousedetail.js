@@ -1,9 +1,10 @@
 /*
  * @Author: 徐横峰 
- * @Date: 2018-07-05 23:27:08 
- * @Last Modified by: 564297479@qq.com
- * @Last Modified time: 2018-07-06 18:03:54
+ * @Date: 2018-07-08 01:32:30 
+ * @Last Modified by:   Xuhengfeng 
+ * @Last Modified time: 2018-07-08 01:32:30 
  */
+
 $(function(){
     //开启es5严格模式
     'use strict';
@@ -86,15 +87,15 @@ $(function(){
     var point = new BMap.Point(116.331398, 39.897445);//城市的坐标
         omap.centerAndZoom(point, 12);
 
-    var geolocation = new BMap.Geolocation();
-        geolocation.enableSDKLocation();//开启SDK辅助定位
-        geolocation.getCurrentPosition(function(r) {
-        if (this.getStatus() == BMAP_STATUS_SUCCESS) {
-            var mk = new BMap.Marker(r.point);
-            omap.addOverlay(mk);
-            omap.panTo(r.point);
-        } 
-    });
+    // var geolocation = new BMap.Geolocation();
+    //     geolocation.enableSDKLocation();//开启SDK辅助定位
+    //     geolocation.getCurrentPosition(function(r) {
+    //     if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+    //         var mk = new BMap.Marker(r.point);
+    //         omap.addOverlay(mk);
+    //         omap.panTo(r.point);
+    //     } 
+    // });
 
 })
 

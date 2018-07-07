@@ -8,12 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 插件样式 -->
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/animate.css">
     <!-- 字体图标样式 -->
     <link rel="stylesheet" href="css/iconfont.css">
     <!-- 页脚样式 -->
     <link rel="stylesheet" href="css/footer.css">
+    <!-- 侧边栏样式 -->
+    <link rel="stylesheet" href="css/sidebar.css">
     <!-- 登录样式 -->
     <link rel="stylesheet" href="css/login.css">
     <!-- 首页样式 -->
@@ -46,7 +49,7 @@
                     <li><a href="#">旅居投资</a></li>
                     <li><a href="#">更多</a>
                         <ol class="more">
-                            <li><a href="#">小区找房</a></li>
+                            <li><a href="pages/estate.html">小区找房</a></li>
                             <li><a href="#">代办业务</a></li>
                             <li><a href="#">便民服务</a></li>
                             <li><a href="#">房屋托管</a></li>
@@ -513,6 +516,107 @@
             </div>
         </div>
     </footer>
+
+    <!-- 侧边栏 -->
+    <div class="sidebar">
+        <ul>
+            <!-- 待看清单 -->
+            <li>
+                <img src="imgs/list.png">
+                <div class="offscreen" style="display: block">
+                    <div class="title">
+                        <span class="fl">待看清单</span>   
+                        <span class="fl">最多可以选择4套房源待看</span>
+                        <span class="fr">清空</span>
+                    </div>
+                    <ol>
+                        <li>
+                            <div class="fl image">
+                                <img src="imgs/zufang.png" alt="图片">
+                            </div>
+                            <div class="r-content">
+                                <div>11</div>
+                                <div><span>22</span><span>33平米</span></div>
+                                <div><span>22</span>万</div>
+                            </div>
+                            <div class="delete">删除</div>
+                        </li>
+                        <li>
+                            <div class="fl image">
+                                <img src="imgs/zufang.png" alt="图片">
+                            </div>
+                            <div class="r-content">
+                                <div>11</div>
+                                <div><span>22</span><span>33平米</span></div>
+                                <div><span>22</span>万</div>
+                            </div>
+                            <div class="delete">删除</div>
+                        </li>
+                        <li>
+                            <button style="display:block">立即预约</button>
+                            <p style="display:none">暂时没有任何预约的房源信息!</p>
+                        </li>
+                    </ol>
+                </div>
+            </li>
+            <!-- 房源对比 -->
+            <li>
+                <img src="imgs/contranst.png">
+                <div class="offscreen" >
+                    <div class="title">
+                        <span class="fl">待看清单</span>   
+                        <span class="fl">最多可以选择4套房源待看</span>
+                        <span class="fr">清空</span>
+                    </div>
+                    <ol>
+                        <li>
+                            <div class="fl image">
+                                <img src="imgs/zufang.png" alt="图片">
+                            </div>
+                            <div class="r-content">
+                                <div>11</div>
+                                <div><span>22</span><span>22</span></div>
+                                <div><span>22</span>万</div>
+                            </div>
+                            <div class="delete">删除</div>
+                        </li>
+                        <li>
+                            <div class="fl image">
+                                <img src="imgs/zufang.png" alt="图片">
+                            </div>
+                            <div class="r-content">
+                                <div>11</div>
+                                <div><span>22</span><span>22</span></div>
+                                <div><span>22</span>万</div>
+                            </div>
+                            <div class="delete">删除</div>
+                        </li>
+                        <li>
+                            <button style="display:block">立即对比</button>
+                            <p style="display:none">暂时没有任何比较的房源信息!</p>
+                        </li>
+                    </ol>
+                </div>
+            </li>
+            <li class="three"><img src="imgs/collection.png">
+                <div class="offscreen">
+                    我收藏的房源
+                </div>
+            </li>
+            <!-- 计算器 -->
+            <li class="four">
+                <img src="imgs/calc.png">
+            </li>
+            <!-- 反馈 -->
+            <li class="five">
+                <img src="imgs/ideaTick.png">
+            </li>
+            <!-- 客服 -->
+            <li class="six">
+                <img src="imgs/service.png">
+            </li>
+        </ul>
+    </div>
 
     <!-- 登录/注册 -->
     <div id="loginContentBox" class="loginContent">

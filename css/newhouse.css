@@ -1,12 +1,12 @@
+@charset "utf-8";
 /*
  * @Author: 徐横峰 
- * @Date: 2018-07-06 14:56:48 
- * @Last Modified by: 564297479@qq.com
- * @Last Modified time: 2018-07-06 15:49:04
+ * @Date: 2018-07-08 01:21:55 
+ * @Last Modified by: Xuhengfeng
+ * @Last Modified time: 2018-07-08 01:22:16
  */
-/*新房样式表 */
-@charset "utf-8";
 
+/*新房样式表 */
 /* 检索结果提示 */
 .resultTips{
     font-weight: bold;

@@ -1,12 +1,13 @@
+@charset "utf-8";
 /*
  * @Author: 徐横峰 
- * @Date: 2018-07-06 14:45:18 
- * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2018-07-07 18:34:26
+ * @Date: 2018-07-08 01:21:10 
+ * @Last Modified by:   Xuhengfeng 
+ * @Last Modified time: 2018-07-08 01:21:10 
  */
+
 /* 房源列表项样式表 */
 /* 列表项的主要 左边内容*/
-@charset "utf-8";
 .main>div{
     overflow: hidden;
 }

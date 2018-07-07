@@ -1,3 +1,11 @@
+@charset "utf-8";
+/*
+ * @Author: 徐横峰 
+ * @Date: 2018-07-08 01:20:39 
+ * @Last Modified by:   Xuhengfeng 
+ * @Last Modified time: 2018-07-08 01:20:39 
+ */
+
 /* 脚部 */
 footer{
     overflow: hidden;
@@ -51,7 +59,7 @@ footer .footer-bd{
 }
 .footer-bd .logo img{
     width: 293px;
-    height: 91px;
+    height: 81px;
 }
 .footer-bd .desc{
     color: #ffffff;

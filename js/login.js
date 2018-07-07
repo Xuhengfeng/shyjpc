@@ -1,9 +1,10 @@
 /*
  * @Author: 徐横峰 
- * @Date: 2018-07-05 23:27:02 
- * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2018-07-05 23:28:47
+ * @Date: 2018-07-08 01:32:50 
+ * @Last Modified by:   Xuhengfeng 
+ * @Last Modified time: 2018-07-08 01:32:50 
  */
+
 $(function(){
     //开启es5严格模式
     'use strict';

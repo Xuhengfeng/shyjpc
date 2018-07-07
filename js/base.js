@@ -1,3 +1,9 @@
+/*
+ * @Author: 徐横峰 
+ * @Date: 2018-07-08 01:33:08 
+ * @Last Modified by:   Xuhengfeng 
+ * @Last Modified time: 2018-07-08 01:33:08 
+ */
 //服务请求地址
 var localhostDev = true;
 var BasicUrl= localhostDev ? 'http://112.74.181.229:7031/custAppApi' : 'https://custapi.shyj.cn/custAppApi/';
