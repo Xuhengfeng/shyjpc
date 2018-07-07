@@ -1,8 +1,8 @@
 /*
  * @Author: 徐横峰 
  * @Date: 2018-07-06 16:36:50 
- * @Last Modified by: 564297479@qq.com
- * @Last Modified time: 2018-07-06 18:16:09
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2018-07-07 18:30:00
  */
  /* 二手房详情样式表 */
 @charset "utf-8";
@@ -117,11 +117,87 @@ aside{
     background: #ffffff;
     font-size: 20px;
 }
-.houseLocation h2{
+.main h2{
     font-size: 20px;
     margin: 60px 0 26px;
 }
 #oMap{
     height: 322px;
     width: 100%;
+}
+
+/* 房源基本信息描述 */
+.houseBaseInfo h3{
+    float: left;
+    width: 188px;
+    text-align: left;
+    color: #999999;
+    font-size: 15px;
+}
+.houseBaseInfo>div{
+    overflow: hidden;
+    border-top: var(--border1px);
+    padding-top: 20px;
+}
+.houseBaseInfo h3+ul{
+    float: left;
+    overflow: hidden;
+    width: 524px;
+}
+.houseBaseInfo ul li{
+    float: left;
+    width: 50%;
+    font-size: 14px;
+    color: #394043;
+    line-height: 24px;
+}
+.houseBaseInfo ul span{
+    color: #999999;
+    margin-right: 30px;
+}
+
+/* 房源动态 */
+.houseDynamic>div{
+    border-top: var(--border1px);
+    padding-top: 20px;
+}
+.houseDynamic table{
+    width: 100%;
+}
+.houseDynamic td{
+    line-height: 24px;
+    font-size: 15px;
+}
+.houseDynamic .tr-desc{
+    text-indent: 20px;
+    font-size: 30px;
+    height: 40px;
+    font-weight: 600;
+}
+.houseDynamic .two h3{
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+.houseDynamic .two .tr-desc td{
+    font-size: 18px;
+}
+.houseDynamic .three{
+    text-align: center;
+    font-size: 18px;
+    padding-top: 10px;
+}
+.houseDynamic .three span{
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 2px;
+    border: var(--border1px);
+}
+/* 重置houselist 的item样式 */
+.item{
+    width: 714px;
+}
+.item h2{
+    margin: 0 0 20px 0;
 }

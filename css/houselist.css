@@ -1,8 +1,8 @@
 /*
  * @Author: 徐横峰 
  * @Date: 2018-07-06 14:45:18 
- * @Last Modified by: 564297479@qq.com
- * @Last Modified time: 2018-07-06 15:40:28
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2018-07-07 18:34:26
  */
 /* 房源列表项样式表 */
 /* 列表项的主要 左边内容*/
@@ -41,6 +41,8 @@
 /* 列表项的 右边内容 */
 .item .r-content{
     margin-left: 260px;
+    height: 175px;
+    overflow: hidden;
 }
 .item .r-content h2,
 .item .r-content>div{
@@ -63,6 +65,7 @@
 }
 .item .r-content .tags{
     overflow: hidden;
+    margin-bottom: 0;
 }
 .item .r-content .tags span{
     float: left;
