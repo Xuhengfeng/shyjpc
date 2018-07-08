@@ -2,8 +2,8 @@
 /*
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:21:43 
- * @Last Modified by:   Xuhengfeng 
- * @Last Modified time: 2018-07-08 01:21:43 
+ * @Last Modified by: Xuhengfeng
+ * @Last Modified time: 2018-07-08 21:52:24
  */
 
 /* 登录的全局样式 */
@@ -150,4 +150,33 @@
 .serviceAgreetment{
     color: #ef0000;
     cursor: pointer;
+}
+
+/* 用户登录之后list */
+.userList{
+    padding-top: 21px;
+    width: 100px;
+    display: none;
+}
+.userList li{
+    background: #ffffff;
+    height: 30px;
+    width: 80px;
+    line-height: 30px;
+    text-indent: 10px;
+    border-bottom: var(--border1px);
+}
+.userList li:hover a{
+    color: #fe0000;
+}
+.userList li a{
+    color: #000000;
+    font-size: 14px;
+}
+.headerImg img{
+    width: 30px;
+    height: 30px;
+    background: url("../imgs/avatar.png") no-repeat center center;
+    background-size: 100%;
+    margin-right: 10px;
 }

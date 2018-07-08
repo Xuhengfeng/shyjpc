@@ -2,8 +2,8 @@
 /*
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:23:33 
- * @Last Modified by:   Xuhengfeng 
- * @Last Modified time: 2018-07-08 01:23:33 
+ * @Last Modified by: Xuhengfeng
+ * @Last Modified time: 2018-07-08 19:12:58
  */
 
  /* 二手房详情样式表 */
@@ -15,8 +15,6 @@
 }
 aside{
     width: 380px;
-    height: 800px;
-    background: #f5f5f5;
 }
 
 /* 主体内容 */
@@ -201,4 +199,100 @@ aside{
 }
 .item h2{
     margin: 0 0 20px 0;
+}
+
+/* 侧边栏 */
+aside .one{
+    overflow: hidden;
+    width: 100%;
+    height: 46px;
+}
+aside .one>div{
+    float: right;
+    text-align: center;
+    border: var(--border1px);
+    width: 112px;
+    height: 46px;
+    line-height: 46px;
+    background: #ffffff;
+    margin-left: 10px;
+    cursor: pointer;
+}
+aside .one>div:first-child{
+    background: var(--bgColor);
+    color: #ffffff;
+    border: none;
+}
+aside .two,
+aside .three,
+aside .four{
+    overflow: hidden;
+    padding: 30px 0;
+    border-bottom: var(--border1px);
+}
+aside .two{
+    padding-top: 10px;
+}
+aside .two .sprice{
+    color: #e4393c;
+    font-size: 46px;
+    font-weight: bold;
+    margin-right: 20px;
+    height: 50px;
+    line-height: 50px;
+}
+aside .two .sprice span{
+    margin-left: 5px;
+    font-size: 15px;
+}
+aside .three strong,
+aside .three span{
+    display: inline-block;
+    width: 120px;
+}
+aside .three>div:first-child{
+    margin-bottom: 10px;
+}
+aside .four div{
+    color: #7e8c8d;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+aside .four div>span{
+    color: #000000;
+    margin-right: 10px;
+}
+aside .five{
+    text-align: center;
+    padding: 20px 0;
+}
+aside .five span{
+    display: inline-block;
+    width: 122px;
+    height: 44px;
+    line-height: 44px;
+    border: var(--border1px);
+    margin:0 10px;
+    cursor: pointer;
+}
+aside .six{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background: var(--bgColor);
+    text-align: center;
+    color: #ffffff;
+    cursor: pointer;
+}
+aside .seven{
+    padding: 30px 0;
+}
+aside .seven img{
+    width: 72px;
+    height: 80px;
+    background: #f5f5f5;
+    margin-right: 10px;
+}
+aside .telphone{
+    color: var(--fontColor);
 }

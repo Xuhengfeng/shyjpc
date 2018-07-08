@@ -1,25 +1,23 @@
 /*
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:32:50 
- * @Last Modified by:   Xuhengfeng 
- * @Last Modified time: 2018-07-08 01:32:50 
+ * @Last Modified by: Xuhengfeng
+ * @Last Modified time: 2018-07-08 21:52:01
  */
 
 $(function(){
     //开启es5严格模式
     'use strict';
     
-    //登录成功之后 append userInfo
-    var infoHtml = '<div class="user-login-after">'
+    //登入成功之后 append userInfo
+    var infoHtml = '<div id="userLoginAfter">'
             +'<div class="headerImg">'
-                +'<img src="imgs/avatar.png" alt="头像">'                   
+                +'<img src="">'                   
                 +'<span class="username">徐横峰</span>'
-                +'<span>/</span>'
+                +'<span style="margin:0 5px">|</span>'
                 +'<span class="user-register-btn user-logout">退出</span>'
             +'</div>'
-        +'</div>'
-        +'<div class="user-login-list">'
-            +'<ul>'
+            +'<ul class="userList">'
                 +'<li><a href="#">消息</a></li>'
                 +'<li><a href="#">个人帐号</a></li>'
                 +'<li><a href="#">预约看房</a></li>'
@@ -28,38 +26,42 @@ $(function(){
             +'</ul>'
         +'</div>'
         
-    // 监听用户登录|登出操作
+    // 监听用户登入|登出操作
     $('#user')
     .on('click', '.user-login-btn', function(){
-        // 打开登录面板
+        // 默认状态
+        $('.user-login .info').hide();
+        
+        // 打开登入面板
         $('#loginContentBox').show();
         
-        // 添加登录信息
+        // 登入请求
+        // 成功添加登入信息
         $('.user-login').append(infoHtml);
-        $('.user-login .info').hide()
     })
     .on('click', '.user-logout',function(){
+        // 默认状态
         $('.user-login .info').show();
-        // 移除登录信息
-        $('.user-login-after').remove();
-        $('.user-login-list').remove();
+        
+        // 移除登入信息
+        $('#userLoginAfter').remove();
     })
-    // 监听用户昵称
+    // 监听用户昵称移入移出
     .on('mouseover', '.username', function(){
-        $('.user-login-list').show();
+        $('.userList').show();
     })
     .on('mouseout','.username', function(){
-        $('.user-login-list').hide();        
+        $('.userList').hide();        
     })
-    // 监听用户登录之后的list
-    .on('mouseover','.user-login-list', function(){
+    // 监听用户list移入移出
+    .on('mouseover','.userList', function(){
         $(this).show();
     })
-    .on('mouseout','.user-login-list', function(){
+    .on('mouseout','.userList', function(){
         $(this).hide();
     })
 
-    //登录|注册
+    //登入|注册
     $('#loginContentBox .close').click(function(){
         $('#loginContentBox').hide();
     })

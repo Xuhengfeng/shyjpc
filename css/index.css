@@ -3,7 +3,7 @@
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:21:31 
  * @Last Modified by: Xuhengfeng
- * @Last Modified time: 2018-07-08 02:59:03
+ * @Last Modified time: 2018-07-08 21:34:58
  */
 
 /* 头部 */
@@ -45,13 +45,15 @@ header nav{
 header nav ul>li{
     position: relative;
     float: left;
-    padding:0 9px;
+    padding:0 10px;
     font-size: 18px;
     /* height: 40px; */
     cursor: pointer;
 }
-header nav ul>li a{
+header nav ul>li>a{
     color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
 }
 header nav ul>li:hover>a{
     color: #fe0000;
@@ -90,29 +92,6 @@ header .location{
 }
 .user-login span{
     cursor: pointer;
-}
-/* 用户登录之后list */
-.user-login-list{
-    display: block;
-}
-.user-login-list ul{
-    padding-top: 20px;
-    width: 100px;
-}
-.user-login-list ul li{
-    background: #ffffff;
-    height: 30px;
-    width: 80px;
-    line-height: 30px;
-    text-indent: 10px;
-    border-bottom: 1px solid #a7a7a6;
-}
-.user-login-list ul li:hover a{
-    color: #fe0000;
-}
-.user-login-list ul li a{
-    color: #000000;
-    font-size: 14px;
 }
 
 /* 搜索框 */
