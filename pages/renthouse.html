@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="../css/header.css">
     <!-- 筛选样式 -->
     <link rel="stylesheet" href="../css/filtertags.css">
+    <!-- 侧边条样式 -->
+    <link rel="stylesheet" href="../css/sidebar.css">
     <!-- 房源列表项样式 -->
     <link rel="stylesheet" href="../css/houselist.css">
     <!-- 租房基本样式 -->
@@ -165,10 +167,10 @@
                 <ul>
                     <li>
                         <div class="houseImg">
-                            <a href=""><img src="../imgs/ershou.png" alt="房源图片"></a> 
+                            <a href="renthousedetail.html"><img src="../imgs/ershou.png" alt="房源图片"></a> 
                         </div>
                         <div class="r-content">
-                            <h2><a href="#">银海区银滩侨建公寓3房121.18平米65万</a></h2>
+                            <h2><a href="renthousedetail.html">银海区银滩侨建公寓3房121.18平米65万</a></h2>
                             <div><img src="../imgs/houseIcon.png" alt="房源描述1"> 高德|1房1厅|51平|南</div>
                             <div><img src="../imgs/locationIcon.png" alt="房源描述2"> 赠送面积大,满二,拎包入住</div>
                             <div class="tags">
@@ -185,10 +187,10 @@
                     </li>
                     <li>
                         <div class="houseImg">
-                            <a href=""><img src="../imgs/ershou.png" alt="房源图片"></a> 
+                            <a href="renthousedetail.html"><img src="../imgs/ershou.png" alt="房源图片"></a> 
                         </div>
                         <div class="r-content">
-                            <h2><a href="#">银海区银滩侨建公寓3房121.18平米65万</a></h2>
+                            <h2><a href="renthousedetail.html">银海区银滩侨建公寓3房121.18平米65万</a></h2>
                             <div><img src="../imgs/houseIcon.png" alt="房源描述1"> 高德|1房1厅|51平|南</div>
                             <div><img src="../imgs/locationIcon.png" alt="房源描述2"> 赠送面积大,满二,拎包入住</div>
                             <div class="tags">
@@ -205,10 +207,10 @@
                     </li>
                     <li>
                         <div class="houseImg">
-                            <a href=""><img src="../imgs/ershou.png" alt="房源图片"></a> 
+                            <a href="renthousedetail.html"><img src="../imgs/ershou.png" alt="房源图片"></a> 
                         </div>
                         <div class="r-content">
-                            <h2><a href="#">银海区银滩侨建公寓3房121.18平米65万</a></h2>
+                            <h2><a href="renthousedetail.html">银海区银滩侨建公寓3房121.18平米65万</a></h2>
                             <div><img src="../imgs/houseIcon.png" alt="房源描述1"> 高德|1房1厅|51平|南</div>
                             <div><img src="../imgs/locationIcon.png" alt="房源描述2"> 赠送面积大,满二,拎包入住</div>
                             <div class="tags">
@@ -301,9 +303,111 @@
         </div>
     </footer>
 
+     <!-- 侧边条 -->
+     <div class="sidebar">
+        <ul>
+            <!-- 待看清单 -->
+            <li>
+                <img src="../imgs/list.png">
+                <div class="offscreen" style="display: block">
+                    <div class="title">
+                        <span class="fl">待看清单</span>   
+                        <span class="fl">最多可以选择4套房源待看</span>
+                        <span class="fr">清空</span>
+                    </div>
+                    <ol>
+                        <li>
+                            <div class="fl image">
+                                <img src="../imgs/zufang.png" alt="图片">
+                            </div>
+                            <div class="r-content">
+                                <div>11</div>
+                                <div><span>22</span><span>33平米</span></div>
+                                <div><span>22</span>万</div>
+                            </div>
+                            <div class="delete">删除</div>
+                        </li>
+                        <li>
+                            <div class="fl image">
+                                <img src="../imgs/zufang.png" alt="图片">
+                            </div>
+                            <div class="r-content">
+                                <div>11</div>
+                                <div><span>22</span><span>33平米</span></div>
+                                <div><span>22</span>万</div>
+                            </div>
+                            <div class="delete">删除</div>
+                        </li>
+                        <li>
+                            <button style="display:block">立即预约</button>
+                            <p style="display:none">暂时没有任何预约的房源信息!</p>
+                        </li>
+                    </ol>
+                </div>
+            </li>
+            <!-- 房源对比 -->
+            <li>
+                <img src="../imgs/contranst.png">
+                <div class="offscreen" >
+                    <div class="title">
+                        <span class="fl">待看清单</span>   
+                        <span class="fl">最多可以选择4套房源待看</span>
+                        <span class="fr">清空</span>
+                    </div>
+                    <ol>
+                        <li>
+                            <div class="fl image">
+                                <img src="../imgs/zufang.png" alt="图片">
+                            </div>
+                            <div class="r-content">
+                                <div>11</div>
+                                <div><span>22</span><span>22</span></div>
+                                <div><span>22</span>万</div>
+                            </div>
+                            <div class="delete">删除</div>
+                        </li>
+                        <li>
+                            <div class="fl image">
+                                <img src="../imgs/zufang.png" alt="图片">
+                            </div>
+                            <div class="r-content">
+                                <div>11</div>
+                                <div><span>22</span><span>22</span></div>
+                                <div><span>22</span>万</div>
+                            </div>
+                            <div class="delete">删除</div>
+                        </li>
+                        <li>
+                            <button style="display:block">立即对比</button>
+                            <p style="display:none">暂时没有任何比较的房源信息!</p>
+                        </li>
+                    </ol>
+                </div>
+            </li>
+            <li class="three"><img src="../imgs/collection.png">
+                <div class="offscreen">
+                    我收藏的房源
+                </div>
+            </li>
+            <!-- 计算器 -->
+            <li class="four">
+                <img src="../imgs/calc.png">
+            </li>
+            <!-- 反馈 -->
+            <li class="five">
+                <img src="../imgs/ideaTick.png">
+            </li>
+            <!-- 客服 -->
+            <li class="six">
+                <img src="../imgs/service.png">
+            </li>
+        </ul>
+    </div>
+    
     <!-- 登录/注册 -->
-    <div id="loginContentBox" class="loginContent" style="display: none">
-        <div class="shadow">
+    <div id="loginContentBox" class="loginContent">
+            <!-- 阴影层 -->
+            <div class="shadow"></div>
             <!-- 登录 -->
             <div class="loginBox" style="display: none;">
                 <div class="close"></div>
@@ -317,7 +421,7 @@
                     <li class="without">没有账号?<span class="register">去注册</span></li>
                 </ul>
             </div>
-
+    
             <!-- 注册 -->
             <div class="registerBox" style="display: none;">
                 <div class="close"></div>
@@ -336,10 +440,10 @@
                         <span class="serviceAgreetment">《世华服务协议》</span>
                     </li>
                     <li><input type="submit" value="注册"></li>
-                    <li class="without">没有账号?<span class="register">去注册</span></li>
+                    <li class="without">没有账号?<span class="login">去登录</span></li>
                 </ul>
             </div>
-
+    
             <!-- 手机快捷登录 -->
             <div class="phoneBox" style="display: none;">
                 <div class="close"></div>
@@ -352,9 +456,9 @@
                     <li class="without">没有账号?<span class="register">去注册</span></li>
                 </ul>
             </div>
-
+    
             <!-- 忘记密码 -->
-            <div class="resetPwd" style="display: block;">
+            <div class="resetPwd" style="display: none;">
                 <div class="close"></div>
                 <h1>忘记密码</h1>
                 <ul>
@@ -367,7 +471,6 @@
                 </ul>
             </div>
         </div>
-    </div>
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <!-- 自定义js -->

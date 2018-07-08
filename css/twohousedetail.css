@@ -3,7 +3,7 @@
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:23:33 
  * @Last Modified by: Xuhengfeng
- * @Last Modified time: 2018-07-08 19:12:58
+ * @Last Modified time: 2018-07-08 22:26:37
  */
 
  /* 二手房详情样式表 */
@@ -229,9 +229,6 @@ aside .four{
     overflow: hidden;
     padding: 30px 0;
     border-bottom: var(--border1px);
-}
-aside .two{
-    padding-top: 10px;
 }
 aside .two .sprice{
     color: #e4393c;

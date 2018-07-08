@@ -3,14 +3,18 @@
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:21:43 
  * @Last Modified by: Xuhengfeng
- * @Last Modified time: 2018-07-08 21:52:24
+ * @Last Modified time: 2018-07-09 00:14:12
  */
 
 /* 登录的全局样式 */
-.loginContent .shadow>div{
+.loginContent{
+    display: none;
+}
+.loginContent>div:not(.shadow){
     position: fixed;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
     background: #ffffff;
     width: 380px;
@@ -18,6 +22,7 @@
     padding: 30px;
     box-sizing: border-box;
     min-height: 355px;
+    z-index: 1000;
 }
 .loginContent h1{
     font-size: 20px;
@@ -70,6 +75,7 @@
 .loginContent .without{
     text-align: center;
 }
+.loginContent .without  .login,
 .loginContent .without .register{
     color: #ef0000;
     cursor: pointer;
@@ -179,4 +185,20 @@
     background: url("../imgs/avatar.png") no-repeat center center;
     background-size: 100%;
     margin-right: 10px;
+}
+
+.obunceIn{
+    animation: pulse 1s .2s ease both;
+}
+
+/* 动画 */
+@-webkit-keyframes pulse {
+    0%{transform: scale(1) translate(-50%,-50%)}
+    90%{transform: scale(1.1) translate(-50%,-50%)}
+    100%{transform: scale(1) translate(-50%,-50%)}
+}
+@keyframes pulse {
+    0%{transform: scale(1) translate(-50%,-50%)}
+    90%{transform: scale(1.1) translate(-50%,-50%)}
+    100%{transform: scale(1)  translate(-50%,-50%)}
 }

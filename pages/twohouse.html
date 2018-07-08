@@ -404,71 +404,71 @@
         </ul>
     </div>
     
-    <!-- 登录/注册 -->
-    <div id="loginContentBox" class="loginContent" style="display: none">
-        <div class="shadow">
-            <!-- 登录 -->
-            <div class="loginBox" style="display: none;">
-                <div class="close"></div>
-                <h1>账号密码登录</h1>
-                <ul>
-                    <li><input type="text" placeholder="账号"></li>
-                    <li><input type="password" placeholder="密码"></li>
-                    <li class="forget"><span class="fr">忘记密码</span></li>
-                    <li><input type="submit" value="登录"></li>
-                    <li class="phoneLogin"><span class="fl">手机快捷登录<span></li>
-                    <li class="without">没有账号?<span class="register">去注册</span></li>
-                </ul>
-            </div>
+   <!-- 登录/注册 -->
+   <div id="loginContentBox" class="loginContent">
+        <!-- 阴影层 -->
+        <div class="shadow"></div>
+        <!-- 登录 -->
+        <div class="loginBox" style="display: none;">
+            <div class="close"></div>
+            <h1>账号密码登录</h1>
+            <ul>
+                <li><input type="text" placeholder="账号"></li>
+                <li><input type="password" placeholder="密码"></li>
+                <li class="forget"><span class="fr">忘记密码</span></li>
+                <li><input type="submit" value="登录"></li>
+                <li class="phoneLogin"><span class="fl">手机快捷登录<span></li>
+                <li class="without">没有账号?<span class="register">去注册</span></li>
+            </ul>
+        </div>
 
-            <!-- 注册 -->
-            <div class="registerBox" style="display: none;">
-                <div class="close"></div>
-                <h1>手机号码注册</h1>
-                <ul>
-                    <li><input type="text" placeholder="账号"></li>
-                    <li class="sendCode"><input type="text" placeholder="验证码"><button>发送验证码</button></li>
-                    <li><input type="password" name="pwd1" placeholder="密码（最少六位，数字加字母）"></li>
-                    <li><input type="password" name="pwd2" placeholder="确认密码"></li>
-                    <li class="agreet">
-                        <input id="myAgreet" type="checkbox" style="display: none">
-                        <label for="myAgreet">
-                            <span></span>
-                            <span>同意</span>
-                        </label>
-                        <span class="serviceAgreetment">《世华服务协议》</span>
-                    </li>
-                    <li><input type="submit" value="注册"></li>
-                    <li class="without">没有账号?<span class="register">去注册</span></li>
-                </ul>
-            </div>
+        <!-- 注册 -->
+        <div class="registerBox" style="display: none;">
+            <div class="close"></div>
+            <h1>手机号码注册</h1>
+            <ul>
+                <li><input type="text" placeholder="账号"></li>
+                <li class="sendCode"><input type="text" placeholder="验证码"><button>发送验证码</button></li>
+                <li><input type="password" name="pwd1" placeholder="密码（最少六位，数字加字母）"></li>
+                <li><input type="password" name="pwd2" placeholder="确认密码"></li>
+                <li class="agreet">
+                    <input id="myAgreet" type="checkbox" style="display: none">
+                    <label for="myAgreet">
+                        <span></span>
+                        <span>同意</span>
+                    </label>
+                    <span class="serviceAgreetment">《世华服务协议》</span>
+                </li>
+                <li><input type="submit" value="注册"></li>
+                <li class="without">没有账号?<span class="login">去登录</span></li>
+            </ul>
+        </div>
 
-            <!-- 手机快捷登录 -->
-            <div class="phoneBox" style="display: none;">
-                <div class="close"></div>
-                <h1>手机快捷登录</h1>
-                <ul>
-                    <li><input type="text" placeholder="账号"></li>
-                    <li class="sendCode"><input type="text" placeholder="验证码"><button>发送验证码</button></li>
-                    <li><input type="submit" value="登录"></li>
-                    <li class="pwdLogin"><span class="fl">帐号密码登录<span></li>
-                    <li class="without">没有账号?<span class="register">去注册</span></li>
-                </ul>
-            </div>
+        <!-- 手机快捷登录 -->
+        <div class="phoneBox" style="display: none;">
+            <div class="close"></div>
+            <h1>手机快捷登录</h1>
+            <ul>
+                <li><input type="text" placeholder="账号"></li>
+                <li class="sendCode"><input type="text" placeholder="验证码"><button>发送验证码</button></li>
+                <li><input type="submit" value="登录"></li>
+                <li class="pwdLogin"><span class="fl">帐号密码登录<span></li>
+                <li class="without">没有账号?<span class="register">去注册</span></li>
+            </ul>
+        </div>
 
-            <!-- 忘记密码 -->
-            <div class="resetPwd" style="display: block;">
-                <div class="close"></div>
-                <h1>忘记密码</h1>
-                <ul>
-                    <li><input type="text" placeholder="账号"></li>
-                    <li class="sendCode"><input type="text" placeholder="验证码"><button>发送验证码</button></li>
-                    <li><input type="password" name="pwd1" placeholder="密码（最少六位，数字加字母）"></li>
-                    <li><input type="password" name="pwd2" placeholder="确认密码"></li>
-                    <li><input type="submit" value="确定"></li>
-                    <li class="without">没有账号?<span class="register">去注册</span></li>
-                </ul>
-            </div>
+        <!-- 忘记密码 -->
+        <div class="resetPwd" style="display: none;">
+            <div class="close"></div>
+            <h1>忘记密码</h1>
+            <ul>
+                <li><input type="text" placeholder="账号"></li>
+                <li class="sendCode"><input type="text" placeholder="验证码"><button>发送验证码</button></li>
+                <li><input type="password" name="pwd1" placeholder="密码（最少六位，数字加字母）"></li>
+                <li><input type="password" name="pwd2" placeholder="确认密码"></li>
+                <li><input type="submit" value="确定"></li>
+                <li class="without">没有账号?<span class="register">去注册</span></li>
+            </ul>
         </div>
     </div>
     
