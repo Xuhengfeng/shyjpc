@@ -24,11 +24,19 @@
     --border1px: 1px solid #ddd;
     --placeholdbgColor: #f5f5f5; 
 }
+@font-face{
+    font-family: 'PingFangXhf';
+    src: url("../fonts/xhfPingFengZhonghei.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
 body, html{    
     width: 100%;
     min-width: 1170px;
-    font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif, 'Droid Sans Fallback';
+    font-family: '微软雅黑';
     background: var(--theme);
+    font-weight: normal;
+    font-style: normal;
 }
 
 /* 居中盒子 ocontainer 避免命名冲突*/
