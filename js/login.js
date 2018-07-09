@@ -1,8 +1,8 @@
 /*
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:32:50 
- * @Last Modified by: Xuhengfeng
- * @Last Modified time: 2018-07-09 00:22:58
+ * @Last Modified by: 564297479@qq.com
+ * @Last Modified time: 2018-07-09 10:14:11
  */
 // 扩展jquery方法
 $.fn.extend({

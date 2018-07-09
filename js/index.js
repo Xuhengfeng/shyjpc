@@ -1,8 +1,8 @@
 /*
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:32:58 
- * @Last Modified by:   Xuhengfeng 
- * @Last Modified time: 2018-07-08 01:32:58 
+ * @Last Modified by: 564297479@qq.com
+ * @Last Modified time: 2018-07-09 10:11:57
  */
 $(function(){
     //开启es5严格模式
@@ -22,9 +22,13 @@ $(function(){
     $('#toggleCity').click(function(){
         $('.citylist').fadeIn();
     })
-    $('#closeDialog').click(function(){
+    $('.citylist .shadow, #closeDialog').click(function(){
         $('.citylist').fadeOut();
     })
+
+
+
+
       
     //检索 二手房 租房  小区
     $('#selectQuery li').click(function(){

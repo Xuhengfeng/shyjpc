@@ -232,7 +232,7 @@ header .location{
 .modal-bd li>ol:nth-of-type(2){
     overflow: hidden;
 }
-.modal-bd .close{
+.modal-bd .oclose{
     position: absolute;
     top: -19px;
     right: -19px;
