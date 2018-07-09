@@ -2,7 +2,7 @@
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:32:58 
  * @Last Modified by: 564297479@qq.com
- * @Last Modified time: 2018-07-09 10:11:57
+ * @Last Modified time: 2018-07-09 16:13:33
  */
 $(function(){
     //开启es5严格模式
@@ -25,10 +25,6 @@ $(function(){
     $('.citylist .shadow, #closeDialog').click(function(){
         $('.citylist').fadeOut();
     })
-
-
-
-
       
     //检索 二手房 租房  小区
     $('#selectQuery li').click(function(){
@@ -49,4 +45,33 @@ $(function(){
         }
     })
 
+
+    // 监听会话列表
+    var showChatlist = true;//用来切换会话列表
+    var showChatBox = true;//用来记住聊天窗口是否被打开
+    $('.chatList')
+    .on('click', '.title', function(){
+        if(showChatlist){
+            $('.chatList').animate({marginBottom: 0},0.2);
+            $('.upDown').show();
+            showChatlist = false;
+            showChatBox ? $('.chatBox').show() : $('.chatBox').hide();
+        }else{
+            $('.chatList').animate({marginBottom:"-460px"},0.2);
+            $('.chatBox').hide();
+            $('.upDown').hide();
+            showChatlist = true;
+        }
+    })
+    .on('click', 'li',function(){
+        showChatBox = true;
+        $('.chatBox').show();
+    })
+
+    // 监听聊天窗口
+    $('.chatBox')
+    .on('click', '.closeChat', function(){
+        showChatBox = false;
+        $('.chatBox').hide();
+    })
 })

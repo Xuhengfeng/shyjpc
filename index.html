@@ -21,7 +21,8 @@
     <link rel="stylesheet" href="css/login.css">
     <!-- 首页样式 -->
     <link rel="stylesheet" href="css/index.css">
-  
+    <!-- 聊天样式 -->
+    <link rel="stylesheet" href="css/chat.css">
 </head>
 <body>
     <!-- 头部 -->
@@ -684,6 +685,91 @@
             </ul>
         </div>
     </div>
+
+    <!-- 聊天 -->
+    <div class="ochat">
+        <!-- 会话列表 -->
+        <div class="fr chatList">
+            <div class="title"><div class="avatar"></div><span>在线咨询</span><div class="upDown"></div></div>
+            <ul>
+                <li>
+                    <div class="time">2018-06-26 01:44:28</div>
+                    <div class="broker">
+                        <div class="fl img"><img src="imgs/avatar.png"></div>
+                        <div class="fl orow">
+                            <h4>312</h4>
+                            <p>11</p>
+                        </div>   
+                    </div>
+                </li>
+                <li>
+                    <div class="time">2018-06-26 01:44:28</div>
+                    <div class="broker">
+                        <div class="fl img"><img src="imgs/avatar.png"></div>
+                        <div class="fl orow">
+                            <h4>312</h4>
+                            <p>11</p>
+                        </div>   
+                    </div>
+                </li> 
+
+                <div class="noBrokers" style="display: block">
+                    <div>没有聊过的经纪人</div>
+                </div>
+                <!-- 滚动到底部 -->
+                <p class="brokerslist"></p>
+            </ul>
+        </div>
+        
+        <!-- 聊天窗口 -->
+        <div class="fr chatBox" style="display: none;">
+            <div class="title"><span>小徐</span><div class="closeChat"></div></div>
+                <div class="chatArea">
+                    <ul>
+                        <div class="chat-tophint">聊天的时候，经纪人无法知道您的手机号！</div>
+                        <li>
+                            <!-- 动态切换类  chat-block-left chat-block-right-->
+                            <div class="chat-block-left">
+                                <div class="chat-time">2018.02.01</div>
+                                <div class="chat-block">
+                                    <a href="#me"><img src=""></a>
+                                    <div class="chat-content">
+                                        <!-- 内容 -->
+                                        <div>内容内容内容</div>
+                                        <!-- 图片 -->
+                                        <img class="chatPic" src="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <!-- 滚动到底部 -->
+                        <p class="scroll"></p>
+                    </ul>
+                </div>
+                <div class="inputBox">
+                    <div class="textBox">
+                    <textarea cols="30" 
+                            rows="10" 
+                            style="resize: none"
+                            v-model="sendMsg"
+                            placeholder="点击输入你要咨询的问题..."
+                            >
+                    </textarea>
+                    <a class="im-input-pic" title="插入图片"><input type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" @change="getFile"/></a>
+                    <div></div>
+                    </div>
+                    <div>
+                        <a class="fl downloadApp" href="http://www.baidu.com">立即下载世华地产app,随时随地聊~</a>
+                        <div class="sendBtn" @click="sendBtn()">发送</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
     <script src="js/jquery-3.2.1.min.js"></script>
     <!-- 自定义js -->
     <script src="js/base.js"></script>

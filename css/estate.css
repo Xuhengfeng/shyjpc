@@ -2,8 +2,8 @@
 /*
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:23:09 
- * @Last Modified by: Xuhengfeng
- * @Last Modified time: 2018-07-08 01:44:06
+ * @Last Modified by: 564297479@qq.com
+ * @Last Modified time: 2018-07-09 17:28:59
  */
 /* 小区样式表 */
 
@@ -57,3 +57,38 @@ aside .download h2{
     position: relative;
 }
 
+
+/* 分页器 */
+.opagination a{
+    float: left;
+    display: inline-block;
+    height: 33px;
+    line-height: 33px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+    color: #000000;
+    font-size: 15px;
+}
+.opagination a:nth-of-type(1),
+.opagination a:nth-last-of-type(1),
+.opagination a:nth-last-of-type(2){
+    padding: 0 10px;
+}
+#currentPage,
+#currentPageAdd1,
+#currentPageAdd2,
+#currentPageAdd3,
+#currentPageAdd4,
+#currentPageAdd5{
+    display: inline-block;
+    width: 33px;
+    height: 33px;
+    line-height: 33px;
+    text-align: center;
+    font-size: 10px;
+}
+#currentPage{
+    background: #fe0000;
+    color: #ffffff;
+    border: 1px solid #fe0000;
+}

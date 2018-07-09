@@ -1,0 +1,319 @@
+@charset "utf-8";
+/*
+ * @Author: 徐横峰 
+ * @Date: 2018-07-09 14:55:38 
+ * @Last Modified by: 564297479@qq.com
+ * @Last Modified time: 2018-07-09 16:06:23
+ */
+
+/* 聊天窗口 */
+.ochat{
+    position: fixed;
+    bottom: 0;
+    right: 40px;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.45);
+    z-index: 1000;
+    overflow: hidden;
+}
+/* 会话列表 */
+.chatList{
+    width: 240px;
+    height: 500px;
+    margin-bottom: -460px;
+    background: #ffffff;
+    transition: all 0.3s ease;
+}
+.chatList .title{
+    height: 40px;
+    line-height: 40px;
+    border-bottom: var(--border1px);
+    border-bottom: 1px solid #dddddd;
+    cursor: pointer;
+}
+.chatList .title .avatar{
+    float: left;
+    width: 40px;
+    height: 40px;
+    background: url('../imgs/shihua.png') no-repeat;
+    background-position: 12px 12px;
+}
+.chatList .title .upDown{
+    float: right;
+    width: 40px;
+    height: 40px;
+    background: url("../imgs/shihua.png") no-repeat;
+    background-position: 12px -108px;
+    cursor: pointer;
+}
+.chatList li{
+    position: relative;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+.chatList li::after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    left: 10px;
+    bottom: 0;
+    border-bottom: var(--border1px);
+    border-bottom: 1px solid #dddddd;
+}
+.chatList li:hover{
+    background: #f5f5f5;
+}
+.chatList li .time{
+    text-align: right;
+    color: #999;
+    font-size: 12px;
+}
+.chatList .broker{
+    overflow: hidden;
+}
+.chatList .broker .img{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.chatList .broker .img img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: url("../imgs/shihua.png") no-repeat center center;
+    background-size: cover; 
+}
+.chatList .orow{
+    width: 75%;
+}
+.chatList .orow h4{
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    margin-bottom: 0;
+}
+.chatList .orow p {
+    color: #666666;
+    font-size: 12px;
+    line-height: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.noBrokers{
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 160px;
+    background: url("../imgs/broker.png") no-repeat center center;
+    background-size: 40%;
+}
+.noBrokers div{
+    padding-bottom: 10px;
+    color: #5a5a5a;
+    line-height: 16px;
+    font-size: 16px;
+    font-weight: 700;
+}
+/* 聊天box */
+.chatBox{
+    width: 380px;
+    height: 500px;
+    background: #FFFFFF;
+    margin-bottom: -500px; 
+    border-right: 1px solid #ddd;
+}
+.chatBox .title{
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #ddd;
+}
+.chatBox .title span{
+    margin-left: 20px;
+}
+.chatBox .title span::before{
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #4285f4;
+    margin-right: 10px;
+}
+.chatBox .title .closeChat{
+    float: right;
+    width: 40px;
+    height: 20px;
+    margin-top: 10px;
+    background: url("../imgs/shihua.png") no-repeat;
+    background-position: 12px -87px;
+    cursor: pointer;
+}
+.chatBox .chatArea{
+    height: 270px;
+    border-bottom: 1px solid #ddd;
+    background: #f3f3f3;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.chatBox .chatArea .chat-tophint{
+    height: 12px;
+    color: #aaa;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 20px 0;
+    text-align: center;
+}
+.chatBox .chatArea ul::-webkit-scrollbar{
+    width: 5px;
+    height: 5px;
+    background: #f3f3f3;
+}
+.chatBox .chatArea ul::-webkit-scrollbar-thumb:vertical{
+    height: 5px;
+    background-color: rgba(125, 125, 125, 0.7);
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+.chatBox .chatArea .chat-time{
+    padding: 0 10px;
+    color: #aaa;
+    font-size: 12px;
+    text-align: center;
+}
+.chatBox .chatArea .chat-block {
+    margin: 16px 0;
+    overflow: hidden;
+}
+.chatBox .chatArea .chat-block a{
+    width: 59px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.chatBox .chat-block a img{
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    background: url("./imgs/avatar.png") no-repeat center center;
+    background-size: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.chatBox .chat-block .chat-content{
+    position: relative;
+    max-width: 220px;
+    min-height: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    word-break: break-all;
+    background: #ffffff;
+}
+.chatBox .chat-block .chat-content .chatPic{
+    max-width: 120px;
+    background: #f5f5f5;
+}
+
+/* 对方消息 */
+.chat-block-left a{
+    float: left;
+}
+.chat-block-left .chat-content{
+    float: left;
+}
+.chat-block-left .chat-content::before{
+    position: absolute;
+    left: -5px;
+    top: 0;
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 0 solid transparent;
+    border-top: 15px solid #ffffff;
+}
+
+/* 己方消息 */
+.chat-block-right a{
+    float: right;
+}
+.chat-block-right .chat-content{
+    float: right;
+}
+.chat-block-right .chat-content::before{
+    position: absolute;
+    right: -5px;
+    top: 0;
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 0 solid transparent;
+    border-top: 15px solid #ffffff;
+}
+
+.chatBox  .inputBox{
+    height: 120px;
+    background: #ffffff;
+}
+.chatBox .textBox{
+    position: relative;
+    padding: 10px 10px 23px 10px;
+    width: 339px;
+    border: 1px solid #d9d9d9;
+    margin: 10px 9px 0 10px;
+    overflow: hidden;
+}
+.chatBox textarea{
+    height: 28px;
+    width: 319px;
+    outline: none;
+    overflow-y: hidden;
+    border: none;
+    padding: 0;
+}
+.chatBox textarea::selection{
+    background: #33be85; 
+    color:#ffffff;
+}
+.chatBox .textBox .im-input-pic{
+    position: absolute;
+    right: 9px;
+    bottom: 10px;
+    display: block;
+    width: 14px;
+    height: 14px;
+    text-indent: 999em;
+    background: url('../imgs/shihua.png') no-repeat 0 -72px;
+    cursor: pointer;
+}
+.chatBox .textBox .im-input-pic input{
+    float: left;
+    opacity: 0;
+    width: 24px;
+}
+.downloadApp{
+    margin: 10px 0 0 10px;
+    line-height: 31px;
+    font-size: 12px;
+    color: #4285f4;
+}
+.downloadApp:hover{
+    text-decoration: underline!important;
+}
+.sendBtn {
+    float: right;
+    margin: 10px 10px 0 0;
+    width: 80px;
+    text-align: center;
+    height: 31px;
+    line-height: 31px;
+    color: #fff;
+    background: #4285f4;
+    cursor: pointer;
+}
