@@ -2,7 +2,7 @@
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:32:50 
  * @Last Modified by: 564297479@qq.com
- * @Last Modified time: 2018-07-10 17:43:41
+ * @Last Modified time: 2018-07-10 18:22:04
  */
 
 
@@ -184,7 +184,66 @@ $(function(){
 
     })
 
+    // 倒计时
+    function countDown(num) {
+        var timer = 60;
+        timer = setInterval(()=> {
+            times--;
+            if (times <= 0) {
+              times = 0; 
+              clearInterval(timer);//清空定时器
+              switch(num){
+                case 1:sendBtn1='发送验证码';disabled1=false;break;
+                case 2:sendBtn2='发送验证码';disabled2=false;break;
+                case 3:sendBtn3='发送验证码';disabled3=false;break;
+              }
+            } else {
+              switch(num){
+                case 1:sendBtn1=times + 's重试';disabled1=true;break;
+                case 2:sendBtn2=times + 's重试';disabled2=true;break;
+                case 3:sendBtn3=times + 's重试';disabled3=true;break;
+              }
+            }
+          }, 1000);
+    }
 
+    //发送验证码
+    function sendMsgCode(num) {
+        switch(num){
+            case 1:disabled1==false&&sendMsgCodeRequest(num);break;
+            case 2:disabled2==false&&sendMsgCodeRequest(num);break;
+            case 3:disabled3==false&&sendMsgCodeRequest(num);break;
+        }
+    }
+    function sendMsgCodeRequest(num) {
+        let mobile, operateType;
+        switch(num) {
+          case 1:mobile = phonenum2;operateType = "REGISTER";break;
+          case 2:mobile = phonenum3;operateType = "LOGIN";break;
+          case 3:mobile = phonenum4;operateType = "RESET_PASSWORD";break;
+        }
+        //非空校验 正则校验
+        if(mobile == undefined) {
+          return $alert('手机不能为空!');
+        }else if(!(/^1[34578]\d{9}$/).test(mobile)) {
+          return $alert('手机格式不对!');
+        }
+  
+        //手机号签名
+        let key = mobile + "29e94f94-8664-48f2-a4ff-7a5807e13b68";
+        $http.post($url.URL.FETCHSMSCODE, {
+          deviceCode: "web",
+          mobile: mobile,
+          operateType: operateType,
+          sign: md5(key.toUpperCase())
+        })
+        .then(res => {
+          //成功时候开启倒计时
+          res.data.status==1&&countDown(num);
+          //不成功不开启倒计时
+          res.data.status!=1&&$alert(res.data.msg);
+        });
+    }
 
     // 切换界面
     // 手机快捷登录点击
