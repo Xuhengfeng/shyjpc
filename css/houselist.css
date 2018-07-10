@@ -19,6 +19,7 @@
     position: relative;
     overflow: hidden;
     padding: 20px 0;
+    border-top: 1px solid #ddd;
     border-top: var(--border1px);
 }
 .item .houseImg{
@@ -88,9 +89,10 @@
 .moreDesc .add{
     display: inline-block;
     width: 60px;
-    height: 24px;
-    line-height: 24px;
+    height: 25px;
+    line-height: 25px;
     text-align: center;
+    border: 1px solid #ddd;
     border: var(--border1px);
     color: rgba(0, 0, 0, 0.5);
     margin-left: 10px;
@@ -103,15 +105,21 @@
 
 /* tags 颜色 */
 .item .r-content .tags span:nth-of-type(1){
+    background: #e5f2ff;
     background: var(--spanbgColor1);
+    color: rgba(0, 85, 164, 0.85);
     color: var(--spanColor1);
 }
 .item .r-content .tags span:nth-of-type(2){
+    background: #fde8e8;
     background: var(--spanbgColor2);
+    color: rgba(239, 31, 31, 0.85);
     color: var(--spanColor2);
 }
 .item .r-content .tags span:nth-of-type(3){
+    background: #e1f5ed;
     background: var(--spanbgColor3);
+    color: #33be85;
     color: var(--spanColor3);
 }
 .item li:hover .moreDesc .add{
