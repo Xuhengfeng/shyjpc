@@ -3,7 +3,7 @@
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:21:31 
  * @Last Modified by: 564297479@qq.com
- * @Last Modified time: 2018-07-09 14:54:12
+ * @Last Modified time: 2018-07-10 16:21:12
  */
 
 /* 头部 */
@@ -156,14 +156,12 @@ header .location{
 .user-login .headerImg *{
     float: left;
 }
-.user-login .headerImg span{
-    margin-right: 5px; 
-}
 .user-login .headerImg img{
     float: left;
     width: 25px;
     height: 25px;
-    margin-right: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
 }
 
 

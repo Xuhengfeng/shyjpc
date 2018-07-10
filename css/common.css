@@ -27,7 +27,7 @@
 body, html{    
     width: 100%;
     min-width: 1170px;
-    font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif, 'Droid Sans Fallback';
+    font-family: '微软雅黑';
     background: var(--theme);
 }
 
