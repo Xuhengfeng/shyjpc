@@ -9,21 +9,86 @@
  * @Last Modified time: 2018-07-08 22:44:42
  */
 
-//登入请求
-function api_requestLogin(){
-	var result;
+// 手机帐号登录
+function api_requestLogin(params){
+  var result;
 	$.ajax({
-         url: '',
-         //data:{name:'test',pwd:'123'},
-         dataType:'json',
-         async:false,
-         success: function(data){
-           result = data.data;
-         },
-         error: function(XMLHttpRequest, textStatus, errorThrown){
-            sin_ajaxError(XMLHttpRequest, textStatus, errorThrown);
-         }
-    	})
-    return result;
+      url: URL.USER_LOGIN,
+      data: params,
+      contentType: 'application/json; charset=UTF-8',
+      dataType:'json',
+      type: 'POST',
+      async: false,
+      success: function(data){
+        sessionStorage.token = data.data;
+        result = data;
+      },
+      error: function(XMLHttpRequest, textStatus, errorThrown){
+        sin_ajaxError(XMLHttpRequest, textStatus, errorThrown);
+      }
+    })
+  return result;
 }
 
+// 手机快捷帐号登录
+function api_request2Login(params){
+  var result;
+	$.ajax({
+      url: URL.SMSCODE_LOGIN,
+      data: params,
+      contentType: 'application/json; charset=UTF-8',
+      dataType:'json',
+      type: 'POST',
+      async: false,
+      success: function(data){
+        sessionStorage.token = data.data;
+        result = data;
+      },
+      error: function(XMLHttpRequest, textStatus, errorThrown){
+        sin_ajaxError(XMLHttpRequest, textStatus, errorThrown);
+      }
+    })
+  return result;
+}
+
+// 获取登录用户信息
+function api_userInfo(token){
+  var result;
+	$.ajax({
+      url: URL.USER_DETAILINFO,
+      contentType: 'application/json;charset=UTF-8',
+      dataType:'json',
+      type: 'POST',
+      beforeSend: function(XMLHttpRequest) {
+        XMLHttpRequest.setRequestHeader("unique-code", token);
+      },
+      async: false,
+      success: function(data){
+        sessionStorage.userInfo = JSON.stringify(data.data);
+        result = data;
+      },
+      error: function(XMLHttpRequest, textStatus, errorThrown){
+        sin_ajaxError(XMLHttpRequest, textStatus, errorThrown);
+      }
+    })
+  return result;
+}
+ 
+// 手机号码注册
+function api_registerUser() {
+  var result;
+	$.ajax({
+      url: URL.USER_REGISTER,
+      contentType: 'application/json;charset=UTF-8',
+      dataType:'json',
+      type: 'POST',
+      async: false,
+      success: function(data){
+        result = data;
+      },
+      error: function(XMLHttpRequest, textStatus, errorThrown){
+        sin_ajaxError(XMLHttpRequest, textStatus, errorThrown);
+      }
+    })
+  return result;
+}

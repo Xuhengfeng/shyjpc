@@ -9,9 +9,19 @@
  * @Last Modified time: 2018-07-08 22:47:14
  */
 
-//服务请求地址
-var localhostDev = true;
-var BasicUrl= localhostDev ? 'http://112.74.181.229:7031/custAppApi' : 'https://custapi.shyj.cn/custAppApi/';
+// 使用layer组件
+// layui.use(['layer', 'form'], function(){
+	var layer = layui.layer,form = layui.form;
+	// layer.msg('test');
+// })
+
+// 扩展jquery方法
+$.fn.extend({
+	animateCss: function (animationName) {
+		var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+		$(this).addClass('animated ' + animationName);
+	}
+});
 
 /*
  * 服务请求出错处理
@@ -19,10 +29,10 @@ var BasicUrl= localhostDev ? 'http://112.74.181.229:7031/custAppApi' : 'https://
 function sin_ajaxError(XMLHttpRequest, textStatus, errorThrown){
 	if(errorThrown===undefined || errorThrown===null ||errorThrown==='')
 		{
-			alert('服务请求失败');
+			console.log('服务请求失败');
 		}
 	else	
 		{
-			alert('服务请求失败:'+errorThrown);
+			console.log('服务请求失败:'+errorThrown);
 		}
 }
