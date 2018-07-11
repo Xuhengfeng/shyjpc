@@ -1,32 +1,42 @@
+//开启es5严格模式
+'use strict';
+
 /*
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:32:50 
  * @Last Modified by: 564297479@qq.com
- * @Last Modified time: 2018-07-10 18:22:04
+ * @Last Modified time: 2018-07-11 17:06:36
  */
 
-
 $(function(){
-    //开启es5严格模式
-    'use strict';
-    
-    // 监听用户登录
+    // 监听用户登录相关操作
     $('#user')
+    // 监听用户登录
     .on('click', '.user-login-btn', function(){
-        // 修改状态 打开登录面板
+        // 打开登录面板
         $('#loginContentBox').show();
         $('.loginBox').show();
         $('.phoneBox').hide();
         $('.registerBox').hide();
         $('.resetPwd').hide();
     })
+    // 监听用户注册
+    .on('click', '.user-register-btn', function(){
+        // 打开注册面板
+        $('#loginContentBox').show();
+        $('.registerBox').show();
+        $('.loginBox').hide();
+        $('.phoneBox').hide();
+        $('.resetPwd').hide();
+    })
     // 监听用户登出
     .on('click', '.user-logout',function(){
         // 还原默认状态
-        $('.user-login .info').show();
+        $('.user-login .info').show(); 
+        $('#loginContentBox').hide();
         $('.loginBox').hide();
-        $('.registerBox').hide();
         $('.phoneBox').hide();
+        $('.registerBox').hide();
         $('.resetPwd').hide();
 
         // 移除登录信息
@@ -34,17 +44,19 @@ $(function(){
         sessionStorage.removeItem('token');
         sessionStorage.removeItem('userInfo');
     })
-    // 监听用户昵称移入移出
+    // 监听用户昵称移入
     .on('mouseover', '.username', function(){
         $('.userList').show();
     })
+    // 监听用户移出
     .on('mouseout','.username', function(){
         $('.userList').hide();        
     })
-    // 监听用户list移入移出
+    // 监听用户list移入
     .on('mouseover','.userList', function(){
         $(this).show();
     })
+    // 监听用户list移出
     .on('mouseout','.userList', function(){
         $(this).hide();
     })
@@ -65,11 +77,20 @@ $(function(){
     var $input11 = $('.phoneBox input[name=code]');        //手机快捷登录验证码
     var $input12 = $('.phoneBox input[type=submit]');      //手机快捷登录提交登录
 
-    var $input13 = $('.resetPwd input[name=username]');    //忘记密码账号
+    var $input13 = $('.resetPwd input[name=username]');    //忘记密码手机账号
     var $input14 = $('.resetPwd input[name=code]');        //忘记密码验证码
     var $input15 = $('.resetPwd input[name=pwd1]');        //忘记密码1
     var $input16 = $('.resetPwd input[name=pwd2]');        //忘记密码2
     var $input17 = $('.resetPwd input[type=submit]');      //忘记密码提交确定
+
+    var $sendBtn1 = $('.registerBox button');              //注册发送验证码
+    var $sendBtn2 = $('.phoneBox button');                 //手机快捷登录发送验证码
+    var $sendBtn3 = $('.resetPwd button');                 //忘记密码发送验证码
+
+    var $disabled1 = false;                                //注册发送验证码未失效
+    var $disabled2 = false;                                //手机快捷登录发送验证码未失效
+    var $disabled3 = false;                                //忘记密码发送验证码未失效
+
 
     // 手机账号提交
     $input3.click(function(){
@@ -105,12 +126,12 @@ $(function(){
 
     
     // 手机快捷登录提交
-    $input11.click(function(){
+    $input12.click(function(){
         // 校验
         switch(true){
             case $input10.val()=='': return layer.msg('输入手机号');
             case !(/^1[34578]\d{9}$/).test($input10.val()): return layer.msg('输入手机号格式不正确');
-            case $input11.val()=='': return layer.msg('输录验证码');
+            case $input11.val()=='': return layer.msg('输入验证码');
         }
         var params = JSON.stringify({
             deviceCode: "web",
@@ -164,12 +185,12 @@ $(function(){
             case $input6.val()!==$input7.val(): return layer.msg('两次密码不一致');
             case $input8.prop('checked')==false: return layer.msg('请同意世华服务协议,谢谢配合')
         }
-        var params = {
+        var params = JSON.stringify({
             deviceCode: "web",
             mobile: $input4.val(),
             password: $input6.val(),
             smsCode: $input5.val()
-        }
+        })
         var data = api_registerUser(params);
         if(data.status == 1){
             layer.msg('注册成功');
@@ -184,65 +205,82 @@ $(function(){
 
     })
 
-    // 倒计时
+    // 监听手机注册发送验证码
+    $sendBtn1.click(function(){
+        // 校验
+        switch(true){
+            case $input4.val()=='': return layer.msg('输入手机号');
+            case !(/^1[34578]\d{9}$/).test($input4.val()): return layer.msg('输入手机号格式不正确');
+        }
+        console.log('注册')
+        sendMsgCode(1);
+    })
+
+    // 监听手机快捷登录验证码
+    $sendBtn2.click(function(){
+        console.log('快捷登录')
+        sendMsgCode(2);
+    })
+
+    // 监听忘记密码发送验证码
+    $sendBtn3.click(function(){
+        console.log('忘记密码')
+        sendMsgCode(3);
+    })
+
+    // 发送验证码倒计时
+    var timer,times=60;
     function countDown(num) {
-        var timer = 60;
-        timer = setInterval(()=> {
+            timer = setInterval(function(){
             times--;
             if (times <= 0) {
               times = 0; 
               clearInterval(timer);//清空定时器
               switch(num){
-                case 1:sendBtn1='发送验证码';disabled1=false;break;
-                case 2:sendBtn2='发送验证码';disabled2=false;break;
-                case 3:sendBtn3='发送验证码';disabled3=false;break;
+                case 1:$sendBtn1.text('发送验证码');$disabled1=false;$sendBtn1.removeClass('disableBtn');break;
+                case 2:$sendBtn2.text('发送验证码');$disabled2=false;$sendBtn2.removeClass('disableBtn');break;
+                case 3:$sendBtn3.text('发送验证码');$disabled3=false;$sendBtn3.removeClass('disableBtn');break;
               }
             } else {
               switch(num){
-                case 1:sendBtn1=times + 's重试';disabled1=true;break;
-                case 2:sendBtn2=times + 's重试';disabled2=true;break;
-                case 3:sendBtn3=times + 's重试';disabled3=true;break;
+                case 1:$sendBtn1.text(times + 's重试');$disabled1=true;$sendBtn1.addClass('disableBtn');break;
+                case 2:$sendBtn2.text(times + 's重试');$disabled2=true;$sendBtn2.addClass('disableBtn');break;
+                case 3:$sendBtn3.text(times + 's重试');$disabled3=true;$sendBtn3.addClass('disableBtn');break;
               }
             }
-          }, 1000);
-    }
+        }, 1000);
 
+    }
     //发送验证码
     function sendMsgCode(num) {
         switch(num){
-            case 1:disabled1==false&&sendMsgCodeRequest(num);break;
-            case 2:disabled2==false&&sendMsgCodeRequest(num);break;
-            case 3:disabled3==false&&sendMsgCodeRequest(num);break;
+          case 1:$disabled1==false&&sendMsgCodeRequest(num);break;
+          case 2:$disabled2==false&&sendMsgCodeRequest(num);break;
+          case 3:$disabled3==false&&sendMsgCodeRequest(num);break;
         }
     }
     function sendMsgCodeRequest(num) {
-        let mobile, operateType;
+        var mobile, operateType;
         switch(num) {
-          case 1:mobile = phonenum2;operateType = "REGISTER";break;
-          case 2:mobile = phonenum3;operateType = "LOGIN";break;
-          case 3:mobile = phonenum4;operateType = "RESET_PASSWORD";break;
+          case 1:mobile = $input4.val();operateType = "REGISTER";break;
+          case 2:mobile = $input11.val();operateType = "LOGIN";break;
+          case 3:mobile = $input13.val();operateType = "RESET_PASSWORD";break;
         }
-        //非空校验 正则校验
-        if(mobile == undefined) {
-          return $alert('手机不能为空!');
-        }else if(!(/^1[34578]\d{9}$/).test(mobile)) {
-          return $alert('手机格式不对!');
-        }
-  
         //手机号签名
-        let key = mobile + "29e94f94-8664-48f2-a4ff-7a5807e13b68";
-        $http.post($url.URL.FETCHSMSCODE, {
-          deviceCode: "web",
-          mobile: mobile,
-          operateType: operateType,
-          sign: md5(key.toUpperCase())
+        var key = mobile + "29e94f94-8664-48f2-a4ff-7a5807e13b68";
+        var sign = md5(key.toUpperCase()).toLowerCase();
+        var params = JSON.stringify({
+            deviceCode: "web",
+            mobile: mobile,
+            operateType: operateType,
+            sign: sign
         })
-        .then(res => {
-          //成功时候开启倒计时
-          res.data.status==1&&countDown(num);
-          //不成功不开启倒计时
-          res.data.status!=1&&$alert(res.data.msg);
-        });
+        var data = api_sendCode(params);
+        if(data.status==1){
+            countDown(num);//开启倒计时
+        }else{
+            layer.msg(data.msg);
+        }
     }
 
     // 切换界面
@@ -252,6 +290,7 @@ $(function(){
         $('.phoneBox').show();
         $('.registerBox').hide();
         $('.resetPwd').hide();
+        clearAllButton();   
         clearAllInput();
     });
 
@@ -261,6 +300,7 @@ $(function(){
         $('.phoneBox').hide();
         $('.registerBox').hide();
         $('.resetPwd').show();
+        clearAllButton();   
         clearAllInput();
     })
 
@@ -270,6 +310,7 @@ $(function(){
         $('.phoneBox').hide();
         $('.registerBox').hide();
         $('.resetPwd').hide();
+        clearAllButton();   
         clearAllInput();
     })
 
@@ -279,6 +320,7 @@ $(function(){
         $('.phoneBox').hide();
         $('.registerBox').show();
         $('.resetPwd').hide();
+        clearAllButton();   
         clearAllInput();
     })
     $('.phoneBox .register').click(function() {
@@ -286,6 +328,7 @@ $(function(){
         $('.phoneBox').hide();
         $('.registerBox').show();
         $('.resetPwd').hide();
+        clearAllButton();   
         clearAllInput();
     })
     $('.resetPwd .register').click(function() {
@@ -293,6 +336,7 @@ $(function(){
         $('.loginBox').hide();
         $('.registerBox').show();
         $('.resetPwd').hide();
+        clearAllButton();   
         clearAllInput();
     })
 
@@ -302,24 +346,36 @@ $(function(){
         $('.loginBox').show();
         $('.registerBox').hide();
         $('.resetPwd').hide();
+        clearAllButton();   
         clearAllInput();
     })
 
     // 阴影层点击关闭
     $('#loginContentBox .shadow').click(function(){
        $('#loginContentBox').hide('fast');
+       clearAllButton(); 
        clearAllInput();
     });
 
     // 登录对话框点击关闭
     $('#loginContentBox .close').click(function(){
         $('#loginContentBox').hide();
+        clearAllButton(); 
         clearAllInput();
     })
 
-    // 清空所有的input
+    // 清空所有的input 除了提交的input
     function clearAllInput() {
         $('#loginContentBox input:not(input[type="submit"])').val('');
     }
-    
+    // 重新赋值所有的button的操作 
+    function clearAllButton() {
+        times = 60;
+        $disabled1 = false;
+        $disabled2 = false;
+        $disabled3 = false;
+        clearInterval(timer);//清空定时器        
+        $('#loginContentBox button').text('发送验证码');
+        $('#loginContentBox button').removeClass('disableBtn');
+    }
 })

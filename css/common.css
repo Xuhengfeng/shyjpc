@@ -2,8 +2,8 @@
 /*
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:19:58 
- * @Last Modified by:   Xuhengfeng 
- * @Last Modified time: 2018-07-08 01:19:58 
+ * @Last Modified by: 564297479@qq.com
+ * @Last Modified time: 2018-07-11 14:13:49
  */
 
 /* 全局变量 */
@@ -125,3 +125,9 @@ a{
     background: var(--bgColor);
 }
 /* --------------------------------- */
+
+/* 按钮失效状态样式 */
+.disableBtn{
+    background: rgba(0,0,0,0.3)!important;
+}
+
