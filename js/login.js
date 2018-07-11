@@ -5,7 +5,7 @@
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:32:50 
  * @Last Modified by: 564297479@qq.com
- * @Last Modified time: 2018-07-11 17:41:46
+ * @Last Modified time: 2018-07-11 17:44:15
  */
 
 $(function(){
@@ -223,14 +223,12 @@ $(function(){
         })
         var data = api_registerPwd(params);
         if(data.status == 1){
-            layer.msg('登录成功');
-            // 成功添加登录信息
-            $('.user-login .info').hide(); 
-            $('.user-login').append(addContent(data2.data));
-
-            $('#loginContentBox').hide();
+            layer.msg('修改成功');
             $('.loginBox').hide();
-            clearAllInput();
+            $('.phoneBox').show();
+            $('.registerBox').hide();
+            $('.resetPwd').hide();
+            clearAllInput();            
         }else{
             layer.msg(data.msg);
         }
