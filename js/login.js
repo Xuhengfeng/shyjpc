@@ -5,7 +5,7 @@
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:32:50 
  * @Last Modified by: 564297479@qq.com
- * @Last Modified time: 2018-07-11 17:39:12
+ * @Last Modified time: 2018-07-11 17:41:46
  */
 
 $(function(){
@@ -219,7 +219,7 @@ $(function(){
             mobile: $input13.val(),
             newPassword: $input15.val(),
             confirmPassword: $input16.val(),
-            smsCode: $sendBtn3.val()
+            smsCode: $input14.val()
         })
         var data = api_registerPwd(params);
         if(data.status == 1){
