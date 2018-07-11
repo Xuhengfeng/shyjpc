@@ -5,7 +5,7 @@
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:32:50 
  * @Last Modified by: 564297479@qq.com
- * @Last Modified time: 2018-07-11 17:06:36
+ * @Last Modified time: 2018-07-11 17:39:12
  */
 
 $(function(){
@@ -205,6 +205,38 @@ $(function(){
 
     })
 
+    //  手机密码忘记提交
+    $input17.click(function(){
+        // 校验
+        switch(true){
+            case $input13.val()=='': return layer.msg('输入手机号');
+            case !(/^1[34578]\d{9}$/).test($input13.val()): return layer.msg('输入手机号格式不正确');
+            case $input14.val()=='': return layer.msg('验证码不能为空');
+            case $input15.val()==''||$input16.val()=='': return layer.msg('密码不能为空');
+            case $input15.val()!==$input16.val(): return layer.msg('两次密码不一致');
+        }
+        var params = JSON.stringify({
+            mobile: $input13.val(),
+            newPassword: $input15.val(),
+            confirmPassword: $input16.val(),
+            smsCode: $sendBtn3.val()
+        })
+        var data = api_registerPwd(params);
+        if(data.status == 1){
+            layer.msg('登录成功');
+            // 成功添加登录信息
+            $('.user-login .info').hide(); 
+            $('.user-login').append(addContent(data2.data));
+
+            $('#loginContentBox').hide();
+            $('.loginBox').hide();
+            clearAllInput();
+        }else{
+            layer.msg(data.msg);
+        }
+    })
+
+
     // 监听手机注册发送验证码
     $sendBtn1.click(function(){
         // 校验
@@ -212,20 +244,30 @@ $(function(){
             case $input4.val()=='': return layer.msg('输入手机号');
             case !(/^1[34578]\d{9}$/).test($input4.val()): return layer.msg('输入手机号格式不正确');
         }
-        console.log('注册')
-        sendMsgCode(1);
+        var mobile = $input4.val();
+        sendMsgCode(1,mobile);
     })
 
     // 监听手机快捷登录验证码
     $sendBtn2.click(function(){
-        console.log('快捷登录')
-        sendMsgCode(2);
+        // 校验
+        switch(true){
+            case $input10.val()=='': return layer.msg('输入手机号');
+            case !(/^1[34578]\d{9}$/).test($input10.val()): return layer.msg('输入手机号格式不正确');
+        }
+        var mobile = $input10.val();
+        sendMsgCode(2,mobile);
     })
 
     // 监听忘记密码发送验证码
     $sendBtn3.click(function(){
-        console.log('忘记密码')
-        sendMsgCode(3);
+        // 校验
+        switch(true){
+            case $input13.val()=='': return layer.msg('输入手机号');
+            case !(/^1[34578]\d{9}$/).test($input13.val()): return layer.msg('输入手机号格式不正确');
+        }
+        var mobile = $input13.val();
+        sendMsgCode(3,mobile);
     })
 
     // 发送验证码倒计时
@@ -252,19 +294,19 @@ $(function(){
 
     }
     //发送验证码
-    function sendMsgCode(num) {
+    function sendMsgCode(num,mobile) {
         switch(num){
-          case 1:$disabled1==false&&sendMsgCodeRequest(num);break;
-          case 2:$disabled2==false&&sendMsgCodeRequest(num);break;
-          case 3:$disabled3==false&&sendMsgCodeRequest(num);break;
+          case 1:$disabled1==false&&sendMsgCodeRequest(num,mobile);break;
+          case 2:$disabled2==false&&sendMsgCodeRequest(num,mobile);break;
+          case 3:$disabled3==false&&sendMsgCodeRequest(num,mobile);break;
         }
     }
-    function sendMsgCodeRequest(num) {
-        var mobile, operateType;
+    function sendMsgCodeRequest(num,mobile) {
+        var operateType;
         switch(num) {
-          case 1:mobile = $input4.val();operateType = "REGISTER";break;
-          case 2:mobile = $input11.val();operateType = "LOGIN";break;
-          case 3:mobile = $input13.val();operateType = "RESET_PASSWORD";break;
+          case 1:operateType = "REGISTER";break;
+          case 2:operateType = "LOGIN";break;
+          case 3:operateType = "RESET_PASSWORD";break;
         }
         //手机号签名
         var key = mobile + "29e94f94-8664-48f2-a4ff-7a5807e13b68";

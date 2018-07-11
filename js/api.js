@@ -113,3 +113,23 @@ function api_sendCode(params) {
     })
   return result;
 }
+
+// 找回密码
+function api_registerPwd(params) {
+  var result;
+	$.ajax({
+      url: URL.SMSCODE_RESETLOGIN,
+      contentType: 'application/json;charset=UTF-8',
+      dataType:'json',
+      data: params,
+      type: 'POST',
+      async: false,
+      success: function(data){
+        result = data;
+      },
+      error: function(XMLHttpRequest, textStatus, errorThrown){
+        sin_ajaxError(XMLHttpRequest, textStatus, errorThrown);
+      }
+    })
+  return result;
+}
