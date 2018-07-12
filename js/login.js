@@ -4,8 +4,8 @@
 /*
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:32:50 
- * @Last Modified by: 564297479@qq.com
- * @Last Modified time: 2018-07-11 17:44:15
+ * @Last Modified by: Xuhengfeng
+ * @Last Modified time: 2018-07-13 00:43:24
  */
 
 $(function(){
@@ -14,7 +14,7 @@ $(function(){
     // 监听用户登录
     .on('click', '.user-login-btn', function(){
         // 打开登录面板
-        $('#loginContentBox').show();
+        $('#loginContentBox .shadow').fadeIn('fast');
         $('.loginBox').show();
         $('.phoneBox').hide();
         $('.registerBox').hide();
@@ -23,7 +23,7 @@ $(function(){
     // 监听用户注册
     .on('click', '.user-register-btn', function(){
         // 打开注册面板
-        $('#loginContentBox').show();
+        $('#loginContentBox .shadow').fadeIn('fast');
         $('.registerBox').show();
         $('.loginBox').hide();
         $('.phoneBox').hide();
@@ -33,7 +33,7 @@ $(function(){
     .on('click', '.user-logout',function(){
         // 还原默认状态
         $('.user-login .info').show(); 
-        $('#loginContentBox').hide();
+        $('#loginContentBox .shadow').fadeOut('fast');
         $('.loginBox').hide();
         $('.phoneBox').hide();
         $('.registerBox').hide();
@@ -392,14 +392,22 @@ $(function(){
 
     // 阴影层点击关闭
     $('#loginContentBox .shadow').click(function(){
-       $('#loginContentBox').hide('fast');
+       $('#loginContentBox .shadow').hide();
+       $('.phoneBox').hide();
+       $('.loginBox').hide();
+       $('.registerBox').hide();
+       $('.resetPwd').hide();
        clearAllButton(); 
        clearAllInput();
     });
 
     // 登录对话框点击关闭
     $('#loginContentBox .close').click(function(){
-        $('#loginContentBox').hide();
+        $('#loginContentBox .shadow').hide();
+        $('.phoneBox').hide();
+        $('.loginBox').hide();
+        $('.registerBox').hide();
+        $('.resetPwd').hide();
         clearAllButton(); 
         clearAllInput();
     })

@@ -3,13 +3,10 @@
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:21:43 
  * @Last Modified by: Xuhengfeng
- * @Last Modified time: 2018-07-09 00:14:12
+ * @Last Modified time: 2018-07-13 00:44:20
  */
 
 /* 登录的全局样式 */
-.loginContent{
-    display: none;
-}
 .loginContent>div:not(.shadow){
     position: fixed;
     top: 50%;

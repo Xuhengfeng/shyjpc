@@ -1,8 +1,8 @@
 /*
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:32:58 
- * @Last Modified by: 564297479@qq.com
- * @Last Modified time: 2018-07-12 15:38:41
+ * @Last Modified by: Xuhengfeng
+ * @Last Modified time: 2018-07-13 00:08:34
  */
 $(function(){
     //开启es5严格模式
@@ -20,10 +20,12 @@ $(function(){
 
     // 城市modal 切换
     $('#toggleCity').click(function(){
-        $('.citylist').fadeIn();
+        $('.citylist .shadow').fadeIn('fast');
+        $('.citylist .dialog').addClass('pulse');
     })
     $('.citylist .shadow, #closeDialog').click(function(){
-        $('.citylist').fadeOut();
+        $('.citylist .shadow').fadeOut('fast');
+        $('.citylist .dialog').removeClass('pulse');
     })
       
     //检索 二手房 租房  小区

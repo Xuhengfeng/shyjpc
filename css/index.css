@@ -2,8 +2,8 @@
 /*
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:21:31 
- * @Last Modified by: 564297479@qq.com
- * @Last Modified time: 2018-07-10 16:21:12
+ * @Last Modified by: Xuhengfeng
+ * @Last Modified time: 2018-07-13 00:15:15
  */
 
 /* 头部 */
@@ -166,7 +166,7 @@ header .location{
 
 
 /* 城市列表 业务地区辐射范围 */
-.citylist{
+.citylist .shadow{
     display: none;
 }
 .citylist .dialog{
@@ -175,12 +175,14 @@ header .location{
     height: 440px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    margin-left: -320px;
+    margin-top: -220px;
     z-index: 1000;
     background: #ffffff;
     border-radius: 5px;
     padding: 0 30px 30px 30px;
     box-sizing: border-box;
+    display: none;
 }
 .citylist .dialog .modal-hd{
     height: 50px;
@@ -373,7 +375,7 @@ header .location{
     float: left;
     width: 358px;
     margin-right: 45px;
-    box-citylist: 0 0 5px 1px rgba(0,0,0,0.2);
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
 }
 .newdish ul li .img{
@@ -387,7 +389,7 @@ header .location{
     float: left;
     width: 358px;
     margin-right: 45px;
-    box-citylist: 0 0 5px 1px rgba(0,0,0,0.2);
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
 }
 .infotrend ul li .img{
@@ -435,3 +437,34 @@ header .location{
 }
 
 
+/* 动画 */
+.pulse{
+    display: block!important;
+    -webkit-animation: pulse 1s 0.2s ease;
+    animation: pulse 1s 0.2s ease;
+}
+@-webkit-keyframes pulse{
+    0%{transform: scale(0)}
+    90%{transform: scale(1.05)}
+    100%{transform: scale(1)}
+}
+@keyframes pulse{
+    0%{transform: scale(0)}
+    90%{transform: scale(1.05)}
+    100%{transform: scale(1)}
+}
+
+.bounce{
+    display: block!important;
+    -webkit-animation: bounce 1s 0.2s ease;
+    animation: bounce 1s 0.2s ease;
+}
+@-webkit-keyframes bounce{
+    0%{opacity: 0}
+    100%{opacity: 1}
+}
+@keyframes bounce{
+    0%{opacity: 0}
+    100%{opacity: 1}
+}
+   
