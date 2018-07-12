@@ -11,7 +11,7 @@
 
 // 使用layer组件
 // layui.use(['layer', 'form'], function(){
-	var layer = layui.layer,form = layui.form;
+var layer = layui.layer,form = layui.form;
 	// layer.msg('test');
 // })
 
@@ -22,6 +22,23 @@ $.fn.extend({
 		$(this).addClass('animated ' + animationName);
 	}
 });
+
+
+// 监听窗体滚动高度
+$(window).scroll(()=>{
+	let oTop = $(window).scrollTop()+$(window).height();
+	let oHeight = $(document).height();
+	console.log(oTop>oHeight-1000)
+	if(oTop>oHeight-200){
+	  $('.up').fadeIn();
+	}else{
+	  $('.up').fadeOut();
+	}
+})
+// 回到顶部
+$('.up').click(()=>{
+	$('html,body').animate({scrollTop: 0},'slow');
+})
 
 /*
  * 服务请求出错处理

@@ -2,7 +2,7 @@
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:32:58 
  * @Last Modified by: 564297479@qq.com
- * @Last Modified time: 2018-07-10 13:36:52
+ * @Last Modified time: 2018-07-12 15:38:41
  */
 $(function(){
     //开启es5严格模式
@@ -74,6 +74,7 @@ $(function(){
         $('.chatBox').hide();
     })
     
+
     
 
 })

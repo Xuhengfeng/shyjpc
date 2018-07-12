@@ -242,14 +242,7 @@
 
                 <!-- 分页器 -->
                 <div class="opagination">
-                    <a href="#" onclick="forward()">上一页</a> 
-                    <a href="#" id="currentPage" class="page_first">1</a> 
-                    <a href="#" id="currentPageAdd1" onclick="changePage(this.id)">2</a>
-                    <a href="#" id="currentPageAdd2" onclick="changePage(this.id)">3</a>
-                    <a href="#" id="currentPageAdd3" onclick="changePage(this.id)">4</a>
-                    <a href="#" id="currentPageAdd4" onclick="changePage(this.id)">5</a> 
-                    <a href="#" onclick="back()">下一页</a> 
-                    <a href="#" onclick="getPrice(-1,10)">末页</a> 
+                    
                 </div>
             </div>
 
@@ -391,6 +384,10 @@
                 <img src="../imgs/service.png">
             </li>
         </ul>
+        <div class="up">
+            <i class="iconfont xhf-icon-top"></i>
+            TOP
+        </div>
     </div>
     
    <!-- 登录/注册 -->
@@ -460,12 +457,14 @@
             </ul>
         </div>
     </div>
-    
-    
-
-
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <!-- layui -->
+    <script src="../layui/layui.all.js"></script>  
+    <!-- jquery分页器 -->
+    <script src="../js/pages-min.js"></script>
+    <!-- 全局js -->
+    <script src="../js/base.js"></script>
     <!-- 自定义js -->
     <script src="../js/twohouse.js"></script>
     <script src="../js/login.js"></script>
