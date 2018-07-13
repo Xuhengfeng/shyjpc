@@ -44,3 +44,6 @@ index                   //入口文件
     ├─renthousedetail.html  //租房详情页
     ├─twohouse.html         //二手房页
     └─twohousedetail.html   //二手房详情页
+
+
+

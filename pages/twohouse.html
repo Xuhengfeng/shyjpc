@@ -98,7 +98,7 @@
         <div class="ocontainer">
             <ul>
                 <li>
-                    <ol>位置:区域</ol>
+                    <ol>位置:城市</ol>
                     <ol>
                         <li><a href="">不限</a></li>
                         <li><a href="">南宁</a></li>
@@ -106,7 +106,7 @@
                     </ol>
                 </li>
                 <li>
-                    <ol>位置:区域</ol>
+                    <ol>售价:</ol>
                     <ol>
                         <li><a href="">不限</a></li>
                         <li><a href="">南宁</a></li>
@@ -114,7 +114,47 @@
                     </ol>
                 </li>
                 <li>
-                    <ol>位置:区域</ol>
+                    <ol>面积:</ol>
+                    <ol>
+                        <li><a href="">不限</a></li>
+                        <li><a href="">南宁</a></li>
+                        <li><a href="">北海</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <ol>户型:</ol>
+                    <ol>
+                        <li><a href="">不限</a></li>
+                        <li><a href="">南宁</a></li>
+                        <li><a href="">北海</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <ol>装修:</ol>
+                    <ol>
+                        <li><a href="">不限</a></li>
+                        <li><a href="">南宁</a></li>
+                        <li><a href="">北海</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <ol>楼龄:</ol>
+                    <ol>
+                        <li><a href="">不限</a></li>
+                        <li><a href="">南宁</a></li>
+                        <li><a href="">北海</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <ol>朝向:</ol>
+                    <ol>
+                        <li><a href="">不限</a></li>
+                        <li><a href="">南宁</a></li>
+                        <li><a href="">北海</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <ol>特色:</ol>
                     <ol>
                         <li><a href="">不限</a></li>
                         <li><a href="">南宁</a></li>
@@ -399,7 +439,7 @@
             <div class="close"></div>
             <h1>账号密码登录</h1>
             <ul>
-                <li><input type="text" placeholder="账号"></li>
+                <li><input type="text" placeholder="手机号"></li>
                 <li><input type="password" placeholder="密码"></li>
                 <li class="forget"><span class="fr">忘记密码</span></li>
                 <li><input type="submit" value="登录"></li>
@@ -413,8 +453,8 @@
             <div class="close"></div>
             <h1>手机号码注册</h1>
             <ul>
-                <li><input type="text" placeholder="账号"></li>
-                <li class="sendCode"><input type="text" placeholder="验证码"><button>发送验证码</button></li>
+                <li><input type="text" name="username" placeholder="手机号"></li>
+                <li class="sendCode"><input type="text" name="code" placeholder="验证码"><button>发送验证码</button></li>
                 <li><input type="password" name="pwd1" placeholder="密码（最少六位，数字加字母）"></li>
                 <li><input type="password" name="pwd2" placeholder="确认密码"></li>
                 <li class="agreet">
@@ -435,8 +475,8 @@
             <div class="close"></div>
             <h1>手机快捷登录</h1>
             <ul>
-                <li><input type="text" placeholder="账号"></li>
-                <li class="sendCode"><input type="text" placeholder="验证码"><button>发送验证码</button></li>
+                <li><input type="text" name="username" placeholder="手机号"></li>
+                <li class="sendCode"><input type="text" name="code" placeholder="验证码"><button>发送验证码</button></li>
                 <li><input type="submit" value="登录"></li>
                 <li class="pwdLogin"><span class="fl">帐号密码登录<span></li>
                 <li class="without">没有账号?<span class="register">去注册</span></li>
@@ -448,8 +488,8 @@
             <div class="close"></div>
             <h1>忘记密码</h1>
             <ul>
-                <li><input type="text" placeholder="账号"></li>
-                <li class="sendCode"><input type="text" placeholder="验证码"><button>发送验证码</button></li>
+                <li><input type="text" name="username" placeholder="手机号"></li>
+                <li class="sendCode"><input type="text" name="code" placeholder="验证码"><button>发送验证码</button></li>
                 <li><input type="password" name="pwd1" placeholder="密码（最少六位，数字加字母）"></li>
                 <li><input type="password" name="pwd2" placeholder="确认密码"></li>
                 <li><input type="submit" value="确定"></li>
@@ -458,7 +498,7 @@
         </div>
     </div>
     <script src="../js/jquery-3.2.1.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/md5.js"></script>
     <!-- layui -->
     <script src="../layui/layui.all.js"></script>  
     <!-- jquery分页器 -->
@@ -466,6 +506,8 @@
     <!-- 全局js -->
     <script src="../js/base.js"></script>
     <!-- 自定义js -->
+    <script src="../js/url.js"></script>
+    <script src="../js/api.js"></script>
     <script src="../js/twohouse.js"></script>
     <script src="../js/login.js"></script>
 </body>

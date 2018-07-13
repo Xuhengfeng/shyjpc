@@ -5,7 +5,7 @@
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:32:50 
  * @Last Modified by: Xuhengfeng
- * @Last Modified time: 2018-07-14 01:33:37
+ * @Last Modified time: 2018-07-14 02:00:22
  */
 
 $(function(){
@@ -250,6 +250,7 @@ $(function(){
 
     // 监听忘记密码发送验证码
     $sendBtn3.click(function(){
+        console.log($input13)
         // 校验
         switch(true){
             case $input13.val()=='': return layer.msg('输入手机号');
