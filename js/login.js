@@ -5,7 +5,7 @@
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:32:50 
  * @Last Modified by: Xuhengfeng
- * @Last Modified time: 2018-07-13 00:43:24
+ * @Last Modified time: 2018-07-14 01:33:37
  */
 
 $(function(){
@@ -15,29 +15,23 @@ $(function(){
     .on('click', '.user-login-btn', function(){
         // 打开登录面板
         $('#loginContentBox .shadow').fadeIn('fast');
+        $('.loginBox,.phoneBox,.registerBox,.resetPwd').hide();
         $('.loginBox').show();
-        $('.phoneBox').hide();
-        $('.registerBox').hide();
-        $('.resetPwd').hide();
     })
     // 监听用户注册
     .on('click', '.user-register-btn', function(){
         // 打开注册面板
         $('#loginContentBox .shadow').fadeIn('fast');
+        $('.loginBox,.phoneBox,.registerBox,.resetPwd').hide();
         $('.registerBox').show();
-        $('.loginBox').hide();
-        $('.phoneBox').hide();
-        $('.resetPwd').hide();
     })
     // 监听用户登出
     .on('click', '.user-logout',function(){
         // 还原默认状态
         $('.user-login .info').show(); 
         $('#loginContentBox .shadow').fadeOut('fast');
-        $('.loginBox').hide();
-        $('.phoneBox').hide();
-        $('.registerBox').hide();
-        $('.resetPwd').hide();
+        $('.loginBox,.phoneBox,.registerBox,.resetPwd').hide();
+        clearAllInput();
 
         // 移除登录信息
         $('#userLoginAfter').remove();
@@ -113,11 +107,11 @@ $(function(){
         if(data.status == 1){
             layer.msg('登录成功');
             // 成功添加登录信息
-            $('.user-login .info').hide(); 
             $('.user-login').append(addContent(data2.data));
-
-            $('#loginContentBox').hide();
-            $('.loginBox').hide();
+            // 还原状态
+            $('.user-login .info').hide(); 
+            $('#loginContentBox .shadow').fadeOut('fast');
+            $('.loginBox,.phoneBox,.registerBox,.resetPwd').hide();
             clearAllInput();
         }else{
             layer.msg(data.msg);
@@ -144,10 +138,11 @@ $(function(){
         if(data.status == 1){
             layer.msg('登录成功');
             // 成功添加登录信息
-            $('.user-login .info').hide(); 
             $('.user-login').append(addContent(data2.data));
-            $('#loginContentBox').hide();
-            $('.loginBox').hide();
+            // 还原状态
+            $('.user-login .info').hide(); 
+            $('#loginContentBox .shadow').fadeOut('fast');
+            $('.loginBox,.phoneBox,.registerBox,.resetPwd').hide();
             clearAllInput();
         }else{
             layer.msg(data.msg);
@@ -194,11 +189,9 @@ $(function(){
         var data = api_registerUser(params);
         if(data.status == 1){
             layer.msg('注册成功');
-            $('.phoneBox').hide();
-            $('.loginBox').show();
-            $('.registerBox').hide();
-            $('.resetPwd').hide();
+            $('.loginBox,.phoneBox,.registerBox,.resetPwd').hide();
             clearAllInput();
+            $('.loginBox').show();
         }else{
             layer.msg(data.msg);
         }
@@ -224,10 +217,8 @@ $(function(){
         var data = api_registerPwd(params);
         if(data.status == 1){
             layer.msg('修改成功');
-            $('.loginBox').hide();
+            $('.loginBox,.phoneBox,.registerBox,.resetPwd').hide();
             $('.phoneBox').show();
-            $('.registerBox').hide();
-            $('.resetPwd').hide();
             clearAllInput();            
         }else{
             layer.msg(data.msg);
@@ -326,19 +317,15 @@ $(function(){
     // 切换界面
     // 手机快捷登录点击
     $('.loginBox .phoneLogin').click(function(){
-        $('.loginBox').hide();
+        $('.loginBox,.phoneBox,.registerBox,.resetPwd').hide();
         $('.phoneBox').show();
-        $('.registerBox').hide();
-        $('.resetPwd').hide();
         clearAllButton();   
         clearAllInput();
     });
 
     // 忘记密码点击
     $('.loginBox .forget').click(function() {
-        $('.loginBox').hide();
-        $('.phoneBox').hide();
-        $('.registerBox').hide();
+        $('.loginBox,.phoneBox,.registerBox,.resetPwd').hide();
         $('.resetPwd').show();
         clearAllButton();   
         clearAllInput();
@@ -346,46 +333,36 @@ $(function(){
 
     // 账号密码点击
     $('.phoneBox .pwdLogin span').click(function() {
+        $('.loginBox,.phoneBox,.registerBox,.resetPwd').hide();
         $('.loginBox').show();
-        $('.phoneBox').hide();
-        $('.registerBox').hide();
-        $('.resetPwd').hide();
         clearAllButton();   
         clearAllInput();
     })
 
     // 去注册点击
     $('.loginBox .register').click(function() {
-        $('.loginBox').hide();
-        $('.phoneBox').hide();
+        $('.loginBox,.phoneBox,.registerBox,.resetPwd').hide();
         $('.registerBox').show();
-        $('.resetPwd').hide();
         clearAllButton();   
         clearAllInput();
     })
     $('.phoneBox .register').click(function() {
-        $('.loginBox').hide();
-        $('.phoneBox').hide();
+        $('.loginBox,.phoneBox,.registerBox,.resetPwd').hide();
         $('.registerBox').show();
-        $('.resetPwd').hide();
         clearAllButton();   
         clearAllInput();
     })
     $('.resetPwd .register').click(function() {
-        $('.phoneBox').hide();
-        $('.loginBox').hide();
+        $('.loginBox,.phoneBox,.registerBox,.resetPwd').hide();
         $('.registerBox').show();
-        $('.resetPwd').hide();
         clearAllButton();   
         clearAllInput();
     })
 
     // 去登录点击
     $('.registerBox .login').click(function() {
-        $('.phoneBox').hide();
+        $('.loginBox,.phoneBox,.registerBox,.resetPwd').hide();
         $('.loginBox').show();
-        $('.registerBox').hide();
-        $('.resetPwd').hide();
         clearAllButton();   
         clearAllInput();
     })
@@ -393,10 +370,7 @@ $(function(){
     // 阴影层点击关闭
     $('#loginContentBox .shadow').click(function(){
        $('#loginContentBox .shadow').hide();
-       $('.phoneBox').hide();
-       $('.loginBox').hide();
-       $('.registerBox').hide();
-       $('.resetPwd').hide();
+       $('.loginBox,.phoneBox,.registerBox,.resetPwd').hide();
        clearAllButton(); 
        clearAllInput();
     });
@@ -404,10 +378,7 @@ $(function(){
     // 登录对话框点击关闭
     $('#loginContentBox .close').click(function(){
         $('#loginContentBox .shadow').hide();
-        $('.phoneBox').hide();
-        $('.loginBox').hide();
-        $('.registerBox').hide();
-        $('.resetPwd').hide();
+        $('.loginBox,.phoneBox,.registerBox,.resetPwd').hide();
         clearAllButton(); 
         clearAllInput();
     })
