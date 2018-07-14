@@ -32,12 +32,12 @@
 
 ### 项目结构
 ```
-index/                   //入口文件
+index                   //入口文件
 ├─css                   //所有的css(含其他插件css)
 ├─fonts                 //字体文件
 ├─imgs                  //所有的图片
 ├─js                    //所有的js(含其他插件js)
-└─pages/                 //其他子页面
+└─pages                 //其他子页面
     ├─estate.html           //小区页
     ├─estatedetail.html     //小区详情页
     ├─newhouse.html         //新房页
