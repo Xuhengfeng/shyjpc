@@ -45,5 +45,19 @@ index                   //入口文件
     ├─twohouse.html         //二手房页
     └─twohousedetail.html   //二手房详情页
 
-
-
+```
+my-app/
+  README.md
+  node_modules/
+  package.json
+  public/
+    index.html
+    favicon.ico
+  src/
+    App.css
+    App.js
+    App.test.js
+    index.css
+    index.js
+    logo.svg
+```
