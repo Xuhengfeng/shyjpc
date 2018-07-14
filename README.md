@@ -31,12 +31,13 @@
 3. 别保存this的引用, 使用function的bind()方法,  bind(指向, 参数)改变指向创建新函数.
 
 ### 项目结构
-index                   //入口文件
+```
+index/                   //入口文件
 ├─css                   //所有的css(含其他插件css)
 ├─fonts                 //字体文件
 ├─imgs                  //所有的图片
 ├─js                    //所有的js(含其他插件js)
-└─pages                 //其他子页面
+└─pages/                 //其他子页面
     ├─estate.html           //小区页
     ├─estatedetail.html     //小区详情页
     ├─newhouse.html         //新房页
@@ -44,20 +45,4 @@ index                   //入口文件
     ├─renthousedetail.html  //租房详情页
     ├─twohouse.html         //二手房页
     └─twohousedetail.html   //二手房详情页
-
-```
-my-app/
-  README.md
-  node_modules/
-  package.json
-  public/
-    index.html
-    favicon.ico
-  src/
-    App.css
-    App.js
-    App.test.js
-    index.css
-    index.js
-    logo.svg
 ```
