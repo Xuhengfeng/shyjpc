@@ -306,7 +306,7 @@ header .location{
     width: 275px;
     height: 305px;
     margin-right: 20px;
-    box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
     overflow: hidden;
 }
@@ -332,13 +332,14 @@ header .location{
     -webkit-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
 }
-.section ul li .img:hover img{
-    transform:  scale(1.2);
+.section ul li:hover .img img{
+    transform:  scale(1.1);
 }
 .description{
     padding: 10px;
 }
 .description .title{
+    height: 40px;
     font-weight: bold;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -360,7 +361,7 @@ header .location{
     float: left;
     width: 358px;
     margin-right: 45px;
-    box-citylist: 0 0 5px 1px rgba(0,0,0,0.2);
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
 }
 .xiaoqu ul li .img{
