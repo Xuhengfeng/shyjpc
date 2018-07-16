@@ -25,7 +25,7 @@ $.fn.extend({
 
 
 // 监听窗体滚动高度
-$(window).scroll(()=>{
+$(window).scroll(function(){
 	let oTop = $(window).scrollTop()+$(window).height();
 	let oHeight = $(document).height();
 	console.log(oTop>oHeight-1000)
