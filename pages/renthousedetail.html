@@ -89,8 +89,8 @@
         <div class="ocontainer">
             <div class="fl logo"><img src="../imgs/redLogo.png" alt="logo"/></div>
             <div class="fl search">
-                <input type="text" placeholder="请输入区域丶商圈或小区名开始找房">
-                <input type="submit" value="">
+                <input type="text" placeholder="请输入区域丶商圈或小区名开始找房"/>
+                <input type="submit" value=""/>
             </div>
             <!-- 地图找房 -->
             <div class="fr mapQuery">
@@ -447,12 +447,12 @@
         </div>
     </footer>
 
-    <!-- 侧边条 -->
+    <!-- 侧边栏 -->
     <div class="sidebar">
         <ul>
             <!-- 待看清单 -->
             <li>
-                <img src="../imgs/list.png"/>
+                <img src="imgs/list.png"/>
                 <div class="offscreen" style="display: block">
                     <div class="title">
                         <span class="fl">待看清单</span>   
@@ -462,7 +462,7 @@
                     <ol>
                         <li>
                             <div class="fl image">
-                                <img src="../imgs/zufang.png" alt="图片"/>
+                                <img src="imgs/zufang.png" alt="图片"/>
                             </div>
                             <div class="r-content">
                                 <div>11</div>
@@ -473,7 +473,7 @@
                         </li>
                         <li>
                             <div class="fl image">
-                                <img src="../imgs/zufang.png" alt="图片"/>
+                                <img src="imgs/zufang.png" alt="图片"/>
                             </div>
                             <div class="r-content">
                                 <div>11</div>
@@ -491,7 +491,7 @@
             </li>
             <!-- 房源对比 -->
             <li>
-                <img src="../imgs/contranst.png"/>
+                <img src="imgs/contranst.png"/>
                 <div class="offscreen" >
                     <div class="title">
                         <span class="fl">待看清单</span>   
@@ -501,7 +501,7 @@
                     <ol>
                         <li>
                             <div class="fl image">
-                                <img src="../imgs/zufang.png" alt="图片"/>
+                                <img src="imgs/zufang.png" alt="图片"/>
                             </div>
                             <div class="r-content">
                                 <div>11</div>
@@ -512,7 +512,7 @@
                         </li>
                         <li>
                             <div class="fl image">
-                                <img src="../imgs/zufang.png" alt="图片"/>
+                                <img src="imgs/zufang.png" alt="图片"/>
                             </div>
                             <div class="r-content">
                                 <div>11</div>
@@ -528,93 +528,176 @@
                     </ol>
                 </div>
             </li>
-            <li class="three"><img src="../imgs/collection.png"/>
+            <li class="three"><img src="imgs/collection.png"/>
                 <div class="offscreen">
                     我收藏的房源
                 </div>
             </li>
             <!-- 计算器 -->
             <li class="four">
-                <img src="../imgs/calc.png"/>
+                <img src="imgs/calc.png"/>
             </li>
             <!-- 反馈 -->
             <li class="five">
-                <img src="../imgs/ideaTick.png"/>
+                <img src="imgs/ideaTick.png"/>
             </li>
             <!-- 客服 -->
             <li class="six">
-                <img src="../imgs/service.png"/>
+                <img src="imgs/service.png"/>
             </li>
         </ul>
+        <div class="up">
+            <i class="iconfont xhf-icon-top"></i>
+            TOP
+        </div>
     </div>
 
     <!-- 登录/注册 -->
     <div id="loginContentBox" class="loginContent">
-            <!-- 阴影层 -->
+        <!-- 阴影层 -->
         <div class="shadow" style="display: none;"></div>
-            <!-- 登录 -->
-            <div class="loginBox" style="display: none;">
-                <div class="close"></div>
-                <h1>账号密码登录</h1>
+        <!-- 登录 -->
+        <div class="loginBox" style="display: none;">
+            <div class="close"></div>
+            <h1>账号密码登录</h1>
+            <ul>
+                <li><input type="text" placeholder="手机号"/></li>
+                <li><input type="password" placeholder="密码"/></li>
+                <li class="forget"><span class="fr">忘记密码</span></li>
+                <li><input type="submit" value="登录"/></li>
+                <li class="phoneLogin"><span class="fl">手机快捷登录</span></li>
+                <li class="without">没有账号?<span class="register">去注册</span></li>
+            </ul>
+        </div>
+
+        <!-- 注册 -->
+        <div class="registerBox" style="display: none;">
+            <div class="close"></div>
+            <h1>手机号码注册</h1>
+            <ul>
+                <li><input type="text" name="username" placeholder="手机号"/></li>
+                <li class="sendCode"><input type="text" name="code" placeholder="验证码"/><button>发送验证码</button></li>
+                <li><input type="password" name="pwd1" placeholder="密码（最少六位，数字加字母）"/></li>
+                <li><input type="password" name="pwd2" placeholder="确认密码"/></li>
+                <li class="agreet">
+                    <input id="myAgreet" type="checkbox" style="display: none"/>
+                    <label for="myAgreet">
+                        <span></span>
+                        <span>同意</span>
+                    </label>
+                    <span class="serviceAgreetment">《世华服务协议》</span>
+                </li>
+                <li><input type="submit" value="注册"/></li>
+                <li class="without">没有账号?<span class="login">去登录</span></li>
+            </ul>
+        </div>
+
+        <!-- 手机快捷登录 -->
+        <div class="phoneBox" style="display: none;">
+            <div class="close"></div>
+            <h1>手机快捷登录</h1>
+            <ul>
+                <li><input type="text" name="username" placeholder="手机号"/></li>
+                <li class="sendCode"><input type="text" name="code" placeholder="验证码"/><button>发送验证码</button></li>
+                <li><input type="submit" value="登录"/></li>
+                <li class="pwdLogin"><span class="fl">帐号密码登录</span></li>
+                <li class="without">没有账号?<span class="register">去注册</span></li>
+            </ul>
+        </div>
+
+        <!-- 忘记密码 -->
+        <div class="resetPwd" style="display: none;">
+            <div class="close"></div>
+            <h1>忘记密码</h1>
+            <ul>
+                <li><input type="text" name="username" placeholder="手机号"/></li>
+                <li class="sendCode"><input type="text" name="code" placeholder="验证码"/><button>发送验证码</button></li>
+                <li><input type="password" name="pwd1" placeholder="密码（最少六位，数字加字母）"/></li>
+                <li><input type="password" name="pwd2" placeholder="确认密码"/></li>
+                <li><input type="submit" value="确定"/></li>
+                <li class="without">没有账号?<span class="register">去注册</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 聊天 -->
+    <div class="ochat">
+        <!-- 会话列表 -->
+        <div class="fr chatList">
+            <div class="title"><div class="avatar"></div><span>在线咨询</span><div class="upDown"></div></div>
+            <ul>
+                <li>
+                    <div class="time">2018-06-26 01:44:28</div>
+                    <div class="broker">
+                        <div class="fl img"><img src="imgs/avatar.png"/></div>
+                        <div class="fl orow">
+                            <h4>312</h4>
+                            <p>11</p>
+                        </div>   
+                    </div>
+                </li>
+                <li>
+                    <div class="time">2018-06-26 01:44:28</div>
+                    <div class="broker">
+                        <div class="fl img"><img src="imgs/avatar.png"/></div>
+                        <div class="fl orow">
+                            <h4>312</h4>
+                            <p>11</p>
+                        </div>   
+                    </div>
+                </li> 
+                <div class="noBrokers" style="display: block">
+                    <div>没有聊过的经纪人</div>
+                </div>
+                <!-- 滚动到底部 -->
+                <p class="brokerslist"></p>
+            </ul>
+        </div>
+        
+        <!-- 聊天窗口 -->
+        <div class="fr chatBox" style="display: none;">
+            <div class="title"><span>小徐</span><div class="closeChat"></div></div>
+            <div class="chatArea">
                 <ul>
-                    <li><input type="text" placeholder="账号"></li>
-                    <li><input type="password" placeholder="密码"></li>
-                    <li class="forget"><span class="fr">忘记密码</span></li>
-                    <li><input type="submit" value="登录"></li>
-                    <li class="phoneLogin"><span class="fl">手机快捷登录<span></li>
-                    <li class="without">没有账号?<span class="register">去注册</span></li>
-                </ul>
-            </div>
-    
-            <!-- 注册 -->
-            <div class="registerBox" style="display: none;">
-                <div class="close"></div>
-                <h1>手机号码注册</h1>
-                <ul>
-                    <li><input type="text" placeholder="账号"></li>
-                    <li class="sendCode"><input type="text" placeholder="验证码"><button>发送验证码</button></li>
-                    <li><input type="password" name="pwd1" placeholder="密码（最少六位，数字加字母）"></li>
-                    <li><input type="password" name="pwd2" placeholder="确认密码"></li>
-                    <li class="agreet">
-                        <input id="myAgreet" type="checkbox" style="display: none">
-                        <label for="myAgreet">
-                            <span></span>
-                            <span>同意</span>
-                        </label>
-                        <span class="serviceAgreetment">《世华服务协议》</span>
+                    <div class="chat-tophint">聊天的时候，经纪人无法知道您的手机号！</div>
+                    <li>
+                        <!-- 动态切换类  chat-block-left chat-block-right-->
+                        <div class="chat-block-left">
+                            <div class="chat-time">2018.02.01</div>
+                            <div class="chat-block">
+                                <a href="#me"><img src=""/></a>
+                                <div class="chat-content">
+                                    <!-- 内容 -->
+                                    <div>内容内容内容</div>
+                                    <!-- 图片 -->
+                                    <img class="chatPic" src=""/>
+                                </div>
+                            </div>
+                        </div>
                     </li>
-                    <li><input type="submit" value="注册"></li>
-                    <li class="without">没有账号?<span class="login">去登录</span></li>
+                    <!-- 滚动到底部 -->
+                    <p class="scroll"></p>
                 </ul>
             </div>
-    
-            <!-- 手机快捷登录 -->
-            <div class="phoneBox" style="display: none;">
-                <div class="close"></div>
-                <h1>手机快捷登录</h1>
-                <ul>
-                    <li><input type="text" placeholder="账号"></li>
-                    <li class="sendCode"><input type="text" placeholder="验证码"><button>发送验证码</button></li>
-                    <li><input type="submit" value="登录"></li>
-                    <li class="pwdLogin"><span class="fl">帐号密码登录<span></li>
-                    <li class="without">没有账号?<span class="register">去注册</span></li>
-                </ul>
-            </div>
-    
-            <!-- 忘记密码 -->
-            <div class="resetPwd" style="display: none;">
-                <div class="close"></div>
-                <h1>忘记密码</h1>
-                <ul>
-                    <li><input type="text" placeholder="账号"></li>
-                    <li class="sendCode"><input type="text" placeholder="验证码"><button>发送验证码</button></li>
-                    <li><input type="password" name="pwd1" placeholder="密码（最少六位，数字加字母）"></li>
-                    <li><input type="password" name="pwd2" placeholder="确认密码"></li>
-                    <li><input type="submit" value="确定"></li>
-                    <li class="without">没有账号?<span class="register">去注册</span></li>
-                </ul>
+            <div class="inputBox">
+                <div class="textBox">
+                <textarea cols="30" 
+                        rows="10" 
+                        style="resize: none"
+                        v-model="sendMsg"
+                        placeholder="点击输入你要咨询的问题..."
+                        >
+                </textarea>
+                <a class="im-input-pic" title="插入图片"><input type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg"/></a>
+                <div></div>
+                </div>
+                <div>
+                    <a class="fl downloadApp" href="http://www.baidu.com">立即下载世华地产app,随时随地聊~</a>
+                    <div class="sendBtn">发送</div>
+                </div>
             </div>
         </div>
+    </div>
 
     <!-- 百度地图 -->
     <script src="http://api.map.baidu.com/api?v=2.0&ak=CWIQ5HNNV8jAcGZ9SpNzkozq5DXOLdTH"></script>

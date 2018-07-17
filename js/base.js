@@ -9,11 +9,13 @@
  * @Last Modified time: 2018-07-08 22:47:14
  */
 
+
 // 使用layer组件
 // layui.use(['layer', 'form'], function(){
 var layer = layui.layer,form = layui.form;
 	// layer.msg('test');
 // })
+
 
 // 扩展jquery方法
 $.fn.extend({
@@ -22,6 +24,7 @@ $.fn.extend({
 		$(this).addClass('animated ' + animationName);
 	}
 });
+
 
 
 // 监听窗体滚动高度
@@ -39,6 +42,38 @@ $(window).scroll(function(){
 $('.up').click(()=>{
 	$('html,body').animate({scrollTop: 0},'slow');
 })
+
+
+
+// 监听会话列表
+var showChatlist = true;//用来切换会话列表
+var showChatBox = true;//用来记住聊天窗口是否被打开
+$('.chatList')
+.on('click', '.title', function(){
+	if(showChatlist){
+		$('.chatList').animate({marginBottom: 0},0.2);
+		$('.upDown').show();
+		showChatlist = false;
+		showChatBox ? $('.chatBox').show() : $('.chatBox').hide();
+	}else{
+		$('.chatList').animate({marginBottom:"-460px"},0.2);
+		$('.chatBox').hide();
+		$('.upDown').hide();
+		showChatlist = true;
+	}
+})
+.on('click', 'li',function(){
+	showChatBox = true;
+	$('.chatBox').show();
+})
+// 监听聊天窗口
+$('.chatBox')
+.on('click', '.closeChat', function(){
+	showChatBox = false;
+	$('.chatBox').hide();
+})
+
+console.log('-------------------------------- 全局操作 --------------------------------------');
 
 /*
  * 服务请求出错处理
