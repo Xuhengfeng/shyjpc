@@ -443,17 +443,17 @@ header .location{
 /* 动画 */
 .pulse{
     display: block!important;
-    -webkit-animation: pulse 1s 0.2s ease;
-    animation: pulse 1s 0.2s ease;
+    -webkit-animation: heartbeat 1s 0.2s ease;
+    animation: heartbeat 1s 0.2s ease; 
 }
-@-webkit-keyframes pulse{
-    0%{transform: scale(0)}
-    90%{transform: scale(1.05)}
+@-webkit-keyframes heartbeat{
+    0%{transform: scale(1)}
+    50%{transform: scale(1.05)}
     100%{transform: scale(1)}
 }
-@keyframes pulse{
-    0%{transform: scale(0)}
-    90%{transform: scale(1.05)}
+@keyframes heartbeat{
+    0%{transform: scale(1)}
+    50%{transform: scale(1.05)}
     100%{transform: scale(1)}
 }
 
