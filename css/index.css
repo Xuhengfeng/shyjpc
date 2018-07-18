@@ -219,6 +219,7 @@ header .location{
 .modal-bd ul{
     margin-top: 25px;
     height: 100px;
+    width: 50%;
     min-height: 300px;
     overflow: auto;
 }
