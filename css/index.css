@@ -214,6 +214,7 @@ header .location{
 }
 .citylist .dialog li>a:hover{
     color: #fe0000;
+    text-decoration: underline!important;
 }
 .modal-bd ul{
     margin-top: 25px;
