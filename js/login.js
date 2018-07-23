@@ -4,8 +4,8 @@
 /*
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:32:50 
- * @Last Modified by: Xuhengfeng
- * @Last Modified time: 2018-07-14 02:00:22
+ * @Last Modified by: 564297479@qq.com
+ * @Last Modified time: 2018-07-19 15:38:40
  */
 
 $(function(){
@@ -311,7 +311,7 @@ $(function(){
         if(data.status==1){
             countDown(num);//开启倒计时
         }else{
-            layer.msg(data.msg);
+            layer.msg(data.msg,{time: 100});
         }
     }
 
