@@ -31,6 +31,7 @@
 3. 别保存this的引用, 使用function的bind()方法,  bind(指向, 参数)改变指向创建新函数.
 
 ### 项目结构
+```
 index                   //入口文件
 ├─css                   //所有的css(含其他插件css)
 ├─fonts                 //字体文件
@@ -44,3 +45,4 @@ index                   //入口文件
     ├─renthousedetail.html  //租房详情页
     ├─twohouse.html         //二手房页
     └─twohousedetail.html   //二手房详情页
+```

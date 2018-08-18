@@ -2,7 +2,7 @@
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:32:58 
  * @Last Modified by: 564297479@qq.com
- * @Last Modified time: 2018-07-10 13:36:52
+ * @Last Modified time: 2018-07-17 11:47:42
  */
 $(function(){
     //开启es5严格模式
@@ -20,10 +20,12 @@ $(function(){
 
     // 城市modal 切换
     $('#toggleCity').click(function(){
-        $('.citylist').fadeIn();
+        $('.citylist .shadow').fadeIn('fast');
+        $('.citylist .dialog').addClass('pulse');
     })
     $('.citylist .shadow, #closeDialog').click(function(){
-        $('.citylist').fadeOut();
+        $('.citylist .shadow').fadeOut('fast');
+        $('.citylist .dialog').removeClass('pulse');
     })
       
     //检索 二手房 租房  小区
@@ -44,36 +46,5 @@ $(function(){
                 break;
         }
     })
-
-    // 监听会话列表
-    var showChatlist = true;//用来切换会话列表
-    var showChatBox = true;//用来记住聊天窗口是否被打开
-    $('.chatList')
-    .on('click', '.title', function(){
-        if(showChatlist){
-            $('.chatList').animate({marginBottom: 0},0.2);
-            $('.upDown').show();
-            showChatlist = false;
-            showChatBox ? $('.chatBox').show() : $('.chatBox').hide();
-        }else{
-            $('.chatList').animate({marginBottom:"-460px"},0.2);
-            $('.chatBox').hide();
-            $('.upDown').hide();
-            showChatlist = true;
-        }
-    })
-    .on('click', 'li',function(){
-        showChatBox = true;
-        $('.chatBox').show();
-    })
-
-    // 监听聊天窗口
-    $('.chatBox')
-    .on('click', '.closeChat', function(){
-        showChatBox = false;
-        $('.chatBox').hide();
-    })
-    
-    
 
 })

@@ -2,8 +2,8 @@
 /*
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:19:58 
- * @Last Modified by:   Xuhengfeng 
- * @Last Modified time: 2018-07-08 01:19:58 
+ * @Last Modified by: 564297479@qq.com
+ * @Last Modified time: 2018-07-12 15:37:51
  */
 
 /* 全局变量 */
@@ -78,18 +78,30 @@ a{
     right: -10px;
     top: 10px;
 }
-.opagination .page-link{
-    border-radius: 0!important;
-    color: #000000;
-    font-size: 12px;
-}
 .opagination li{
+    float: left;
+    display: inline-block;
+    height: 33px;
+    width: 33px;
+    line-height: 33px;
+    border: 1px solid #ddd;
     margin-right: 10px;
+    color: #000000;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
 }
-.opagination .active .page-link{
-    outline: none!important;
-    background: var(--bgColor)!important;
-    border-color:  var(--bgColor)!important;
+.opagination .paging-selecte{
+    border: 1px solid #fe0000;
+    background: #fe0000;
+    color: #ffffff;
+}
+.opagination li[title='上一页'],
+.opagination li[title='下一页']{
+    width: 50px;
+}
+.opagination ul:last-child{
+    display: none;
 }
 /* ------------------------------------------------- */
 
@@ -125,3 +137,9 @@ a{
     background: var(--bgColor);
 }
 /* --------------------------------- */
+
+/* 按钮失效状态样式 */
+.disableBtn{
+    background: rgba(0,0,0,0.3)!important;
+}
+

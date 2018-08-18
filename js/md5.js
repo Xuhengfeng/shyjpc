@@ -203,8 +203,4 @@ function md5(string) {
 	var passwords = password.toUpperCase()
 	return passwords
 }
-export {
-	md5
-}
-
 

@@ -1,8 +1,8 @@
 /*
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:32:30 
- * @Last Modified by: 564297479@qq.com
- * @Last Modified time: 2018-07-09 10:40:48
+ * @Last Modified by: Xuhengfeng
+ * @Last Modified time: 2018-07-26 01:06:47
  */
 
 $(function(){
@@ -58,13 +58,7 @@ $(function(){
             oSwiper1.slideNext();
       });
 
-      // 鼠标移入移出
-      $('.view').mouseover(()=>{
-        $(".view .arrow-left,.view .arrow-right").show();
-      }).mouseout(()=>{
-        $(".view .arrow-left,.view .arrow-right").hide();
-      })
-
+     
       // 更新acitve位置
       function updateNavPosition() {
           $(".preview .active-nav").removeClass("active-nav");
@@ -116,5 +110,41 @@ $(function(){
         var num = $(this).index();
         selectMap(num);
     })
+    
+    //放大镜
+    $('.view')
+    .mousemove(function(ent){
+        $('#move,#bigImg').show();
+        var e = ent||event;
+        //文档位置
+        var x = e.pageX;
+        var y = e.pageY;
+        //坐标原点对齐
+        x = x - $(this).offset().left;
+        y = y - $(this).offset().top;
+        //move的位置
+        x = x - $('#move').width()/2;
+        y = y - $('#move').height()/2;
+        //边界限制
+        var maxLeft = $(this).width()-$('#move').width();
+        var maxTop = $(this).height()-$('#move').height();
+        if(x<=0){
+            x = 0;
+        }else if(x>=maxLeft){
+            x = maxLeft;
+        }
+        if(y<=0){
+            y = 0;
+        }else if(y>=maxTop){
+            y = maxTop;
+        }
+        //移动的比例
+		var bLeft = x / maxLeft * ($('#bigImg img').width()-$('#bigImg').width());
+        var bTop =  y / maxTop * ($('#bigImg img').height()-$('#bigImg').height());
+        $('#move').css({'left': x, 'top': y});
+        $('#bigImg img').css({'marginLeft': -bLeft, 'marginTop': -bTop});
+    })
+    .mouseout(function(){
+        $('#move,#bigImg').hide();
+    })
 })
-

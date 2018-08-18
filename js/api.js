@@ -75,12 +75,53 @@ function api_userInfo(token){
 }
  
 // 手机号码注册
-function api_registerUser() {
+function api_registerUser(params) {
   var result;
 	$.ajax({
       url: URL.USER_REGISTER,
+      data: params,
       contentType: 'application/json;charset=UTF-8',
       dataType:'json',
+      type: 'POST',
+      async: false,
+      success: function(data){
+        result = data;
+      },
+      error: function(XMLHttpRequest, textStatus, errorThrown){
+        sin_ajaxError(XMLHttpRequest, textStatus, errorThrown);
+      }
+    })
+  return result;
+}
+
+// 手机号码注册发送验证码
+function api_sendCode(params) {
+  var result;
+	$.ajax({
+      url: URL.FETCHSMSCODE,
+      contentType: 'application/json;charset=UTF-8',
+      dataType:'json',
+      data: params,
+      type: 'POST',
+      async: false,
+      success: function(data){
+        result = data;
+      },
+      error: function(XMLHttpRequest, textStatus, errorThrown){
+        sin_ajaxError(XMLHttpRequest, textStatus, errorThrown);
+      }
+    })
+  return result;
+}
+
+// 找回密码
+function api_registerPwd(params) {
+  var result;
+	$.ajax({
+      url: URL.SMSCODE_RESETLOGIN,
+      contentType: 'application/json;charset=UTF-8',
+      dataType:'json',
+      data: params,
       type: 'POST',
       async: false,
       success: function(data){

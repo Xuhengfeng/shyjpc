@@ -1,8 +1,8 @@
 /*
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:32:43 
- * @Last Modified by:   Xuhengfeng 
- * @Last Modified time: 2018-07-08 01:32:43 
+ * @Last Modified by: 564297479@qq.com
+ * @Last Modified time: 2018-07-12 15:56:23
  */
 
 $(function(){
@@ -19,4 +19,20 @@ $(function(){
         }
     );
     
+    // 分页器
+    $(".opagination").Page({
+        Pages:200,
+        PageOn:function(e){
+            if($('.opagination li:first-child').get(0).title == '上一页'){
+                $('.opagination li:first-child').text('上一页')
+            }
+            if($('.opagination li:last-child').get(0).title == '下一页'){
+                $('.opagination li:last-child').text('下一页')
+            }
+            $('html,body').scrollTop(0);
+            // 请求
+        },
+        JumpOn:function(e){},
+        ActiveClass:"paging-selecte",
+    });
 })
