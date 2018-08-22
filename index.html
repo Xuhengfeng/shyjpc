@@ -791,3 +791,18 @@
 </body>
 </html>
 
+
+
+<!-- 经纪人信息 -->
+<div class="five" th:object="${info.broker}">
+    <img class="fl" th:src="*{photo}?*{photo}:@{/imgs/avatar.png}"/>
+    <div class="fr">
+        <div class="brokerName" th:text="*{emplName}">xxx人</div>
+        <div class="telphone" th:text="*{phone}">15857009520</div>
+        <div class="desc">亲自勘察，真实房源，竭诚为您服务</div>
+        <div class="linkBroker"  th:attr="emplName=${info.broker.emplName},
+            phone=${info.broker.phone},
+            chatUsername=${info.broker.chatUsername},
+            photo=${info.broker.photo}">联系经纪人</div> 
+    </div>
+</div>
