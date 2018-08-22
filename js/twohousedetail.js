@@ -3,7 +3,7 @@
  * @Author: 徐横峰 
  * @Date: 2018-07-08 01:32:30 
  * @Last Modified by: 564297479@qq.com
- * @Last Modified time: 2018-08-22 20:47:43
+ * @Last Modified time: 2018-08-22 20:55:32
  */
 
 //百度地图实例化
@@ -49,37 +49,6 @@ $('.queryword').on('click', 'ul>li', function() {
 	selectMap(num);
 })
 
-//带看记录 
-$('#next,#prev').click(function(){
-	if($(this).find('.xhf-icon-left').length){
-		page--;
-		if(page<=1){
-			page=1;
-		}
-	}else{
-		page++;
-	}
-	var params = {
-		scity: 'beihai',
-		pageNo: page,
-		id: info.id
-	}
-	var result = api_twoHouseSeeHouseList(params);
-	var $td1 = $('.houseDynamic .two tr:first-child');
-	var $td2 = $('.houseDynamic .two tr:not(":first-child")');
-	//先进行清空
-	$td2.remove();
-	result.data.forEach(function(item,index){
-		$td1.after(		
-			'<tr class="tr-desc">'+
-			'<td>'+item.seeDate+'</td>'+
-			'<td>'+item.emplName+'</td>'+
-			'<td>'+item.phone+'</td>'+
-			'</tr>' 
-		)
-	}); 
-})
-
 //登录之后获取数据
 function loginAfterRefresh() {
 	try{var scity = JSON.parse(localStorage.selectCity).scity||'beihai'}catch(error){};
@@ -96,10 +65,6 @@ function loginAfterRefresh() {
 		result.isCollect? $('#addCollection').text('已收藏') : $('#addCollection').text('收藏房源');	
 		//判断是否加入
 		result.isComparison ? $('#comparison>span').text('已加入') : $('#comparison>span').text('加入对比');
-		
-		
-		
-//			$('#comparison>span').text('加入对比');
 		//预约看房列表
 		appendAppointHtml(result.houseList);	
 		//对比列表
@@ -161,7 +126,6 @@ function appendAppointHtml() {
 		$('#appointBtn').hide().siblings().show();	
 	}
 }
-
 //监听预约看房删除
 $('#appointList').on('click', '.delete', function(){
 	var params = {
@@ -172,8 +136,24 @@ $('#appointList').on('click', '.delete', function(){
 	//刷新状态
 	loginAfterRefresh();
 })
-
-
+//监听预约全删
+$('#clearAllAppointList').click(function() {
+	var list = $('#appointList>li:last-child');
+	list.each(function(index,item){
+		//请求删除
+		var params = {id: $(item).data().id, scity: $(item).data().scity};
+		var result = api_appointDeleteOne(params);
+	})
+	//清空还原
+	$('#appointList>li:not(:last-child)').remove();
+	$('#appointBtn').hide().siblings().show();	
+	//刷新状态
+	loginAfterRefresh();
+})
+//立即预约
+$('#appointBtn').click(function(){
+	location.href="http://www.shyj.cn/#/mine/indexseeone";
+})
 
 
 // console.log('------------------------------------------------对比清单操作-----------------------------------------------------------')
@@ -310,11 +290,6 @@ $('#addCollection').click(function(e){
 	} 
 })
 
-
-
-
-
-
 //监听分享移入移出
 $('.share,.myShare').mouseover(function(){
 	$('.myShare').show();
@@ -330,5 +305,36 @@ $('.mapQuery').click(function(){
 //监听搜索框点击
 $('.search>input[type="submit"]').click(function(){
 	location.href="http://localhost:7031/custAppApi/house_c/twohouse?scity=beihai";
+})
+
+//带看记录 
+$('#next,#prev').click(function(){
+	if($(this).find('.xhf-icon-left').length){
+		page--;
+		if(page<=1){
+			page=1;
+		}
+	}else{
+		page++;
+	}
+	var params = {
+		scity: 'beihai',
+		pageNo: page,
+		id: info.id
+	}
+	var result = api_twoHouseSeeHouseList(params);
+	var $td1 = $('.houseDynamic .two tr:first-child');
+	var $td2 = $('.houseDynamic .two tr:not(":first-child")');
+	//先进行清空
+	$td2.remove();
+	result.data.forEach(function(item,index){
+		$td1.after(		
+			'<tr class="tr-desc">'+
+			'<td>'+item.seeDate+'</td>'+
+			'<td>'+item.emplName+'</td>'+
+			'<td>'+item.phone+'</td>'+
+			'</tr>' 
+		)
+	}); 
 })
 
